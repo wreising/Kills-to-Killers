@@ -1,6 +1,12 @@
 # Kills to Killers
 
-Number of murders by state by year translated to one of The Killers top 100 songs.
+Number of selected catagory of crimes by state by year translated to one of the top songs by selected general artists.
+
+### Murder - The Killers
+### Robbery - The Police
+### Grand Theft Auto - Motorhead
+### Arson - FireHouse
+### Assault Knife Party
 
 ## Crime Data Explorer
 

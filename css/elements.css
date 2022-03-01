@@ -1,7 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  width: 95%;
+  width: 80%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -19,7 +19,7 @@ header {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   width: 95%;
-  max-width: 960px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   background-color: rgb(255, 255, 255);
@@ -44,7 +44,7 @@ header {
   border-radius: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 15px;
+  padding: 25px;
   line-height: 1.2;
 }
 
@@ -76,4 +76,14 @@ footer {
   text-align: center;
   padding-top: 15px;
   padding-bottom: 5px;
+}
+
+.card {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }

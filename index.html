@@ -15,8 +15,8 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   <!-- css -->
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/elements.css">
-  <link rel="stylesheet" href="css/style.css"/>
 
   <title>Kills to Killers</title>
 </head>
@@ -27,6 +27,97 @@
     <h1>Kills to Killers</h1>
   </header>
 
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <!-- column -->
+      <div class="six columns" style="text-align: center;">
+        <label for="exampleRecipientInput">Crime Category</label>
+        <select class="" style="width: 75%" id="exampleRecipientInput">
+          <option value="Option 1">Murder</option>
+          <option value="Option 2">Robbery</option>
+          <option value="Option 3">Grand Theft Auto</option>
+          <option value="Option 4">Arson</option>
+          <option value="Option 5">Assault</option>
+        </select>
+      </div>
+      <!-- column end -->
+      <!-- column -->
+      <div class="six columns" style="text-align: center;">
+        <label for="exampleRecipientInput">Birth Year</label>
+        <select class="" style="width: 75%" id="exampleRecipientInput">
+          <option value="1978">1978</option>
+          <option value="1979">1979</option>
+          <option value="1980">1980</option>
+          <option value="1981">1981</option>
+          <option value="1982">1982</option>
+          <option value="1983">1983</option>
+          <option value="1984">1984</option>
+          <option value="1985">1985</option>
+          <option value="1986">1986</option>
+          <option value="1987">1987</option>
+          <option value="1988">1988</option>
+          <option value="1989">1989</option>
+        </select>
+      </div>
+    </div>
+    <!-- column end -->
+    <!-- row end -->
+    <!-- row -->
+    <div class="row">
+      <!-- column -->
+      <div class="six columns card">
+        <h2>Crime Data</h2>
+        <table class="" style="width: 80%; margin-left: auto; margin-right: auto;">
+          <thead>
+            <tr>
+              <th style="font-size: large;">Category</th>
+              <th style="font-size: larger;">Number per Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Murder</td>
+              <td>#</td>
+            </tr>
+            <tr>
+              <td>Robery</td>
+              <td>#</td>
+            </tr>
+            <tr>
+              <td>Grand Theft Auto</td>
+              <td>#</td>
+            </tr>
+            <tr>
+              <td>Arson</td>
+              <td>#</td>
+            </tr>
+            <tr>
+              <td>Assault</td>
+              <td>#</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- column end -->
+      <!-- column -->
+      <div class="six columns card" style="text-align: center;">
+        <h2>Music</h2>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/en/1/17/The_Killers_-_Hot_Fuss.png">
+        </div>
+        <div>
+          <h3>Your Song title:</h3>
+          <h3>Smile like you Mean It</h3>
+          <h3>Hot Fuss - 2004</h3>
+          <h3><a href="https://en.wikipedia.org/wiki/Hot_Fuss">Wikipedia</a></h3>
+        </div>
+      </div>
+      <!-- column end -->
+    </div>
+  </div>
+  <!-- container end -->
 
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -34,6 +125,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <!-- Javascript -->
   <script src="js/script.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/crime.js"></script>
 
   <footer>
     © 2022

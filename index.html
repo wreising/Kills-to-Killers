@@ -74,45 +74,57 @@
           <thead>
             <tr>
               <th style="font-size: large;">Category</th>
-              <th style="font-size: larger;">Number per Year</th>
+              <th style="font-size: larger;">Prior Year</th>
+              <th style="font-size: larger;">Selected Year</th>
+              <th style="font-size: larger;">Next Year</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Murder</td>
+              <td id="murderNumber-1">#</td>
               <td id="murderNumber">#</td>
+              <td id="murderNumber+1">#</td>
             </tr>
             <tr>
               <td>Robery</td>
+              <td id="robberyNumber-1">#</td>
               <td id="robberyNumber">#</td>
+              <td id="robberyNumber+1">#</td>
             </tr>
             <tr>
-              <td id="gtaNumber">Grand Theft Auto</td>
-              <td>#</td>
+              <td>Grand Theft Auto</td>
+              <td id="gtaNumber-1">#</td>
+              <td id="gtaNumber">#</td>
+              <td id="gtaNumber+1">#</td>
             </tr>
             <tr>
-              <td id="arsonNumber">Arson</td>
-              <td>#</td>
+              <td>Arson</td>
+              <td id="arsonNumber-1">#</td>
+              <td id="arsonNumber">#</td>
+              <td id="arsonNumber+1">#</td>
             </tr>
             <tr>
-              <td id="assaultNumber">Assault</td>
-              <td>#</td>
+              <td>Assault</td>
+              <td id="assaultNumber-1">#</td>
+              <td id="assaultNumber">#</td>
+              <td id="assaultNumber+1">#</td>
             </tr>
           </tbody>
         </table>
       </div>
       <!-- column end -->
       <!-- column -->
-      <div class="six columns card" style="text-align: center;">
+      <div class="six columns card" style="text-align: center; margin-left: auto; margin-right: auto;">
         <h2>Music</h2>
-        <h3>Band: <span id="bandName"></span></h3>
+        <h3>Band: <span id="bandName">The Killers</span></h3>
         <div id="albumArt">
           <img src="https://upload.wikimedia.org/wikipedia/en/1/17/The_Killers_-_Hot_Fuss.png">
         </div>
         <div>
-          <h3>Your Song title:</h3>
-          <h3 id="songTitle">Smile like you Mean It</h3>
-          <h3 id="albumTitle">Hot Fuss - 2004</h3>
+          <h3>Your Song title: <span id="songTitle">Smile like you Mean It</span></h3>
+          <h3 id="albumTitle">Hot Fuss - <span id="albumYear">2004</span></h3>
+          <h3>--music player--  </h3>
           <h3 id="wikiLink"><a href="https://en.wikipedia.org/wiki/Hot_Fuss">Wikipedia</a></h3>
         </div>
       </div>

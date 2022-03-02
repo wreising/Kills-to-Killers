@@ -29,13 +29,17 @@ header {
   box-shadow: 0 0 15px 5px rgba(44, 82, 100, .75);
   border-radius: 20px;
   margin-bottom: 20px;
-  padding: 15px;
+  padding-top: 0px;
+  padding-bottom: 0;
+  padding-left: 15px;
+  padding-right: 15px;
   line-height: 1.2;
 }
 
 h1 {
   text-align: center;
   font-size: 4em;
+  margin: 0;
 }
 
 h2 {

@@ -1,3 +1,5 @@
+/* CSS for HTML Elements */
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -31,23 +33,6 @@ header {
   line-height: 1.2;
 }
 
-.container {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  width: 95%;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgb(255, 255, 255);
-  border: 3px solid rgb(75, 75, 75);
-  box-shadow: 0 0 15px 5px rgba(44, 82, 100, .75);
-  border-radius: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 25px;
-  line-height: 1.2;
-}
-
 h1 {
   text-align: center;
   font-size: 4em;
@@ -78,12 +63,3 @@ footer {
   padding-bottom: 5px;
 }
 
-.card {
-  padding: 20px;
-  margin: 10px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}

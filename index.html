@@ -34,19 +34,19 @@
       <!-- column -->
       <div class="six columns" style="text-align: center;">
         <label for="exampleRecipientInput">Crime Category</label>
-        <select class="" style="width: 75%" id="exampleRecipientInput">
-          <option value="Option 1">Murder</option>
-          <option value="Option 2">Robbery</option>
-          <option value="Option 3">Grand Theft Auto</option>
-          <option value="Option 4">Arson</option>
-          <option value="Option 5">Assault</option>
+        <select class="" style="width: 75%" id="catagoryInput">
+          <option value="murderSelect">Murder</option>
+          <option value="robberySelect">Robbery</option>
+          <option value="gtaSelect">Grand Theft Auto</option>
+          <option value="arsonSelect">Arson</option>
+          <option value="assultSelect">Assault</option>
         </select>
       </div>
       <!-- column end -->
       <!-- column -->
       <div class="six columns" style="text-align: center;">
         <label for="exampleRecipientInput">Birth Year</label>
-        <select class="" style="width: 75%" id="exampleRecipientInput">
+        <select class="" style="width: 75%" id="yearInput">
           <option value="1978">1978</option>
           <option value="1979">1979</option>
           <option value="1980">1980</option>
@@ -59,6 +59,7 @@
           <option value="1987">1987</option>
           <option value="1988">1988</option>
           <option value="1989">1989</option>
+          <option value="1990">1990</option>
         </select>
       </div>
     </div>
@@ -79,22 +80,22 @@
           <tbody>
             <tr>
               <td>Murder</td>
-              <td>#</td>
+              <td id="murderNumber">#</td>
             </tr>
             <tr>
               <td>Robery</td>
+              <td id="robberyNumber">#</td>
+            </tr>
+            <tr>
+              <td id="gtaNumber">Grand Theft Auto</td>
               <td>#</td>
             </tr>
             <tr>
-              <td>Grand Theft Auto</td>
+              <td id="arsonNumber">Arson</td>
               <td>#</td>
             </tr>
             <tr>
-              <td>Arson</td>
-              <td>#</td>
-            </tr>
-            <tr>
-              <td>Assault</td>
+              <td id="assaultNumber">Assault</td>
               <td>#</td>
             </tr>
           </tbody>
@@ -104,14 +105,15 @@
       <!-- column -->
       <div class="six columns card" style="text-align: center;">
         <h2>Music</h2>
-        <div>
+        <h3>Band: <span id="bandName"></span></h3>
+        <div id="albumArt">
           <img src="https://upload.wikimedia.org/wikipedia/en/1/17/The_Killers_-_Hot_Fuss.png">
         </div>
         <div>
           <h3>Your Song title:</h3>
-          <h3>Smile like you Mean It</h3>
-          <h3>Hot Fuss - 2004</h3>
-          <h3><a href="https://en.wikipedia.org/wiki/Hot_Fuss">Wikipedia</a></h3>
+          <h3 id="songTitle">Smile like you Mean It</h3>
+          <h3 id="albumTitle">Hot Fuss - 2004</h3>
+          <h3 id="wikiLink"><a href="https://en.wikipedia.org/wiki/Hot_Fuss">Wikipedia</a></h3>
         </div>
       </div>
       <!-- column end -->

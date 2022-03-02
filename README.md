@@ -6,7 +6,7 @@ Number of selected catagory of crimes by state by year translated to one of the 
 ### Robbery - The Police
 ### Grand Theft Auto - Motorhead
 ### Arson - FireHouse
-### Assault Knife Party
+### Assault - Knife Party
 
 ## Crime Data Explorer
 

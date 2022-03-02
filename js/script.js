@@ -26,9 +26,10 @@ fetch(
     var albumImg =
       data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
     var albumName = data.tracks.items[x].data.albumOfTrack.name;
-    var songLink = data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl;
     var codeSong = data.tracks.items[x].data.albumOfTrack.id;
-
+    
+    document.getElementById("albumTitle").innerHTML = "**" + albumName + "**";
+    document.getElementById("bandName").innerHTML = artistName;
     document.getElementById("songTitle").innerHTML = songName;
     document.getElementById("albumArt").setAttribute("src", albumImg);
 

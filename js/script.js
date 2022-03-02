@@ -1,9 +1,4 @@
-// Search
-
-// fetch 1
-
-// fetch 2 - Spotify - https://rapidapi.com/Glavier/api/spotify23/
-
+// The Killer album match to Murder
 fetch(
   "https://spotify23.p.rapidapi.com/search/?q=the%20killers&type=tracks&offset=0&limit=100&numberOfTopResults=5",
   {
@@ -23,7 +18,6 @@ fetch(
     //random method trigger after seach function
     let x = Math.floor(Math.random() * 100);
     console.log(x);
-
     //or use x = # of incident
 
     //calling var for output of a song
@@ -33,27 +27,24 @@ fetch(
       data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
     var albumName = data.tracks.items[x].data.albumOfTrack.name;
     var songLink = data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl;
+    var codeSong = data.tracks.items[x].data.albumOfTrack.id;
 
-    //title of the song
-    console.log("song:" + data.tracks.items[x].data.name);
-    //artist name
-    console.log(
-      "artist: " + data.tracks.items[x].data.artists.items[0].profile.name
-    );
-    //album picture
-    console.log(
-      "img: " + data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url
-    );
-    // album name
-    console.log("album name: " + data.tracks.items[x].data.albumOfTrack.name);
-    //Album link
-    console.log(
-      "link: " + data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl
-    );
-    //more song of artist info on Spotify
-    console.log(data.tracks.items[x].data.artists.items[0].uri);
-    // link of the song
-    console.log(data.tracks.items[x].data.uri);
+    document.getElementById("songTitle").innerHTML = songName;
+    document.getElementById("albumArt").setAttribute("src", albumImg);
+
+    const musicBox = `<iframe
+              src="https://open.spotify.com/embed/album/${codeSong}?utm_source=generator"
+              width="100%"
+              height="200"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>`;
+
+    document.getElementById("frame").innerHTML = musicBox;
   });
 
-// render to page
+{
+}
+
+//need to fix

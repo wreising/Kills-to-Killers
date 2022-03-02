@@ -24,7 +24,7 @@ header {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(253, 242, 242);
   border: 3px solid rgb(75, 75, 75);
   box-shadow: 0 0 15px 5px rgba(44, 82, 100, .75);
   border-radius: 20px;
@@ -66,4 +66,3 @@ footer {
   padding-top: 15px;
   padding-bottom: 5px;
 }
-

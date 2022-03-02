@@ -19,3 +19,9 @@ API Key = psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g
 https://rapidapi.com/Glavier/api/spotify23/
 
 API Key = 13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592
+
+## Wikipedia API
+
+https://www.mediawiki.org/wiki/API:Main_page
+
+https://www.mediawiki.org/w/api.php

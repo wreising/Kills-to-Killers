@@ -29,7 +29,7 @@ fetch(
     /*     var codeSong = data.tracks.items[x].data.albumOfTrack.id;
      */
     var codeABC = data.tracks.items[x].data.uri.split(":");
-    console.log(codeABC[2]);
+    console.log(codeABC);
 
     document.getElementById("albumTitle").innerHTML = "**" + albumName + "**";
     document.getElementById("bandName").innerHTML = artistName;

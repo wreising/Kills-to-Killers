@@ -91,7 +91,7 @@ function getUserSelections() {
     })
 }
 
-getUserSelections()
+
 
 
 ////// fetch 3 - MediaWiki - search WikiPedia

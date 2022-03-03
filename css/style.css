@@ -101,3 +101,7 @@ footer {
   padding-top: 15px;
   padding-bottom: 5px;
 }
+
+img {
+  border-radius: 10px;
+}

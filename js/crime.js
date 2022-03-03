@@ -2,10 +2,35 @@
 
 // let apiKey = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
 // let endPoint = "https://crime-data-explorer.fr.cloud.gov/#"
+let totalClearedMurder = 0
+let totalClearedRobbery = 0
+let totalClearedGta = 0
+let totalClearedArson = 0
+let totalClearedAssault = 0
 
-let inputYear = 2019
-let inputCrime = 'murder'
+let inputYear = selectedYear
+let inputCrime = selectedCatagory
 // let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + inputCrime + '/' + inputYear + '/' + inputYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
+
+let crimeStatFetch = () => {
+
+  let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + inputCrime + '/' + inputYear + '/' + inputYear + '?API_KEY=psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g'
+
+  fetch(crimeApi)
+
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (data) {
+      //console.log(data)
+      for (let i = 0; i < data.results.length; i++) {
+
+        totalClearedMurder += data.results[i].cleared
+      }
+      console.log(totalClearedMurder)
+      return totalClearedMurder
+    })
+}
 
 //crime functions
   
@@ -21,7 +46,7 @@ fetch(murderApi)
   .then(function (data) {
     //console.log(data)
     for (let i = 0; i < data.results.length; i++) {
-      let totalClearedMurder = 0
+
       totalClearedMurder += data.results[i].cleared
     }
     console.log(totalClearedMurder)
@@ -41,7 +66,7 @@ fetch(robberyApi)
   .then(function (data) {
     //console.log(data)
     for (let i = 0; i < data.results.length; i++) {
-      let totalClearedRobbery = 0
+
       totalClearedRobbery += data.results[i].cleared
     }
     console.log(totalClearedRobbery)
@@ -61,7 +86,7 @@ fetch(gtaApi)
   .then(function (data) {
     //console.log(data)
     for (let i = 0; i < data.results.length; i++) {
-      let totalClearedGta = 0
+
       totalClearedGta += data.results[i].cleared
     }
     console.log(totalClearedGta)
@@ -81,7 +106,7 @@ fetch(arsonApi)
   .then(function (data) {
     //console.log(data)
     for (let i = 0; i < data.results.length; i++) {
-      let totalClearedArson = 0
+
       totalClearedArson += data.results[i].cleared
     }
     console.log(totalClearedArson)
@@ -101,10 +126,11 @@ fetch(assaultApi)
   .then(function (data) {
     //console.log(data)
     for (let i = 0; i < data.results.length; i++) {
-      let totalClearedAssault = 0
+      
       totalClearedAssault += data.results[i].cleared
     }
     console.log(totalClearedAssault)
+    
     return totalClearedAssault
   })
 }
@@ -140,8 +166,6 @@ let threeYearDataFetch = () => {
   document.getElementById('arsonNumber').innerHTML = arsonStatFetch()
   document.getElementById('assaultNumber').innerHTML = assaultStatFetch()
 
-  console.log(assaultStatFetch())
-
   inputYear++
   document.getElementById('murderNumber+1').innerHTML = murderStatFetch()
   document.getElementById('robberyNumber+1').innerHTML = robberyStatFetch()
@@ -161,5 +185,3 @@ let threeYearDataFetch = () => {
 }
 
 threeYearDataFetch()
-
-assaultStatFetch()

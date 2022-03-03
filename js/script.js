@@ -29,10 +29,20 @@ function getUserSelections() {
   //// fetch 2 - Spotify
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
-  //// use selectedCategory to establish band name ------------------------
-  const keyword = "The Killers"
-  //// use selectedCategory to establish band name ------------------------
 
+  let keyword = ''
+
+  if (selectedCategory === 'Murder') {
+    keyword = 'The Killers'
+  } else if (selectedCategory === 'Robbery') {
+    keyword = 'The Police'
+  } else if (selectedCategory === 'Grand Theft Auto') {
+    keyword = 'Motorhead'
+  } else if (selectedCategory === 'Arson') {
+    keyword = 'FireHouse'
+  } else {
+    keyword = 'Knife Party'
+  }
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" + keyword + "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
@@ -49,55 +59,39 @@ function getUserSelections() {
     .then(function (data) {
       console.log(data);
 
-      //random method trigger after seach function ------------------------
-
-      // does x = crimeNumber? ------------------------
-
+      //random method trigger after seach function
       let x = Math.floor(Math.random() * 100);
       console.log(x);
 
-      //or use x = # of incident ------------------------
+      //or use x = # of incident
 
       //calling var for output of a song
       let songName = data.tracks.items[x].data.name;
       let artistName = data.tracks.items[x].data.artists.items[0].profile.name;
       let albumImg = data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
       let albumName = data.tracks.items[x].data.albumOfTrack.name;
-      let codeSong = data.tracks.items[x].data.albumOfTrack.id;
-      let songLink = data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl;
+      let codeABC = data.tracks.items[x].data.uri.split(":");
+
 
       //song player on page
       const musicBox = `<iframe
-              src="https://open.spotify.com/embed/album/${codeSong}?utm_source=generator"
+              src="https://open.spotify.com/embed/track/${codeABC[2]}?utm_source=generator"
               width="100%"
-              height="200"
+              height="80"
               frameborder="0"
-              allowfullscreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                           
             ></iframe>`;
-
-      //title of the song
-      console.log("song:" + songName);
-      //artist name
-      console.log("artist: " + artistName);
-      //album picture
-      console.log("img: " + albumImg);
-      // album name
-      console.log("album name: " + albumName);
-      //Album link
-      console.log("link: " + songLink);
-
-
       // render to page
       document.getElementById('songTitle').innerHTML = songName
       document.getElementById('bandName').innerHTML = artistName
       document.getElementById('art').setAttribute('src', albumImg)
       document.getElementById('albumTitle').innerHTML = albumName
       document.getElementById("frame").innerHTML = musicBox;
-      // document.getElementById('spotifyLink').setAttribute('href', songLink)
-
     })
 }
+
+getUserSelections()
 
 
 ////// fetch 3 - MediaWiki - search WikiPedia

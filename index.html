@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="css/foundation.css">
   <link rel="stylesheet" href="css/app.css">
   <!-- skeleton -->
-  <link rel="stylesheet" href="css/skeleton.css">
+  <!-- <link rel="stylesheet" href="css/skeleton.css"> -->
 
   <!-- fonts -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-  
+
   <!-- css -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -33,13 +33,23 @@
   </header>
 
   <!-- modal load on page load -->
-
+<div class="reveal" id="exampleModal1" data-reveal>
+  <h1>Awesome. I Have It.</h1>
+  <p class="lead">Your couch. It is mine.</p>
+  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p><button class="button" data-open="exampleModal1">Click me for a modal</button></p>
+</div>
   <!-- modal -->
 
   <!-- container -->
   <div class="container">
+    
     <!-- row -->
     <div class="row">
+      
       <!-- column -->
       <div class="six columns" style="text-align: center;">
         <label for="exampleRecipientInput">Crime Category</label>
@@ -50,6 +60,7 @@
           <option id="arsonSelect">Arson</option>
           <option id="assultSelect">Assault</option>
         </select>
+        <p><button class="button" data-open="exampleModal1">Click me for a modal</button></p>
       </div>
       <!-- column end -->
       <!-- column -->

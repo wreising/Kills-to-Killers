@@ -28,7 +28,7 @@ function getUserSelections() {
   //// fetch 2 - Spotify - https://rapidapi.com/Glavier/api/spotify23/
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
-  let apiKeySong = "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592?
+  let apiKeySong = "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592?"
   let endPointSong = "https://spotify23.p.rapidapi.com/search/?q=the%20killers&type=tracks&offset=0&limit=100&numberOfTopResults=5"
 
   //// code for fetch 2
@@ -52,7 +52,7 @@ function getUserSelections() {
 
   ////// use songName to do a search on Wikipedia
 
-  let ? = "?" // establish variables - types of info we can get
+  let set = "set" // establish variables - types of info we can get
 
 }
 

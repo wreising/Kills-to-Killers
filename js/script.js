@@ -1,15 +1,15 @@
-Search
+// Search
 
-attempt at a modal dialog
+// attempt at a modal dialog
 
-attempt at a modal dialog
+// attempt at a modal dialog
 
-numbers from modal dialog
+// numbers from modal dialog
 crimeCatagory = ""
 yearNumber = ""
 
-fetch 1
-Crime Data Explorer API
+// fetch 1
+// Crime Data Explorer API
 
 let apiKey = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
 let endPoint = "https://crime-data-explorer.fr.cloud.gov/#"
@@ -50,10 +50,10 @@ then(function (response) {
 
               // MediaWiki - search WikiPedia
 
-              https://www.mediawiki.org/wiki/API:Main_page
+              // https://www.mediawiki.org/wiki/API:Main_page
 
-              https://www.mediawiki.org/w/api.php
-             })
+              // https://www.mediawiki.org/w/api.php
+            })
       })
   })
 

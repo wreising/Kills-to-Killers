@@ -1,95 +1,57 @@
+function getUserSelections() {
+  let category = document.getElementById('catagoryInput');
+  let year = document.getElementById('yearInput');
 
-// was suppose to be for user input
-// document.getElementById('btn').addEventListener('click', event =>{
-//   const sb = document.getElementById('categoryInput')
-//   let selectedOption = sb.options[sb.selectedIndex]
-//   const selectedValue = selectedOption.value
-//   let keyword
-//   let val = selectedValue
-//   console.log(val)
-//   if (val === 0) {
-//     keyword = 'The Killers'
-//   } else if (val === 1) {
-//     keyword = 'The Police'
-//   } else if (val === 2) {
-//     keyword = 'Motorhead'
-//   } else if (val === 3) {
-//     keyword = 'FireHouse'
-//   } else {
-//     keyword = 'Knife Party'
-//   }
-  
-//   console.log(val)
-//   return keyword
-// })
+  let selectedCategory = category.options[category.selectedIndex].value;
+  let selectedYear = year.options[year.selectedIndex].value;
 
+  console.log(selectedCategory, selectedYear);
 
-const songPicker = () =>{
-    
-    const keyword = "The police"
+  // fetch 1
+  // Crime Data Explorer API
 
-  fetch(
-    "https://spotify23.p.rapidapi.com/search/?q=" + keyword + "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "spotify23.p.rapidapi.com",
-        "x-rapidapi-key": "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592",
-      },
-    })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
+  let apiKeyCrime = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
+  let endPointCrime = "https://crime-data-explorer.fr.cloud.gov/#"
 
-      //random method trigger after seach function
-      let x = Math.floor(Math.random() * 100);
-      console.log(x);
+  // variable for user selection for Crime category = selectedCategory
+  // variable for user selection for Year - selectedYear
 
-      //or use x = # of incident
+  // code for fetch 1
 
-      //calling var for output of a song
-      let songName = data.tracks.items[x].data.name;
-      let artistName = data.tracks.items[x].data.artists.items[0].profile.name;
-      let albumImg = data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
-      let albumName = data.tracks.items[x].data.albumOfTrack.name;
-      let codeSong = data.tracks.items[x].data.albumOfTrack.id;
-      let songLink = data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl;
-      
-      //song player on page
-      const musicBox = `<iframe
-              src="https://open.spotify.com/embed/album/${codeSong}?utm_source=generator"
-              width="100%"
-              height="200"
-              frameborder="0"
-              allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            ></iframe>`;
+  // variable for crime data for selected year = crimeNumber
 
-      //title of the song
-      console.log("song:" + songName);
-      //artist name
-      console.log("artist: " + artistName);
-      //album picture
-      console.log("img: " + albumImg);
-      // album name
-      console.log("album name: " + albumName);
-      //Album link
-      console.log("link: " + songLink);
+  // variable for crime data for prior year = crimeNumberPrior
+  // variable for crime data for following year = crimeNumberFollowing
 
+  //// fetch 2 - Spotify - https://rapidapi.com/Glavier/api/spotify23/
+  //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
-      // render to page
-      document.getElementById('songTitle').innerHTML = songName
-      document.getElementById('bandName').innerHTML = artistName
-      document.getElementById('art').setAttribute('src', albumImg)
-      document.getElementById('albumTitle').innerHTML = albumName
-      document.getElementById("frame").innerHTML = musicBox;
-      // document.getElementById('spotifyLink').setAttribute('href', songLink)
-      
-    })
+  let apiKeySong = "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592?
+  let endPointSong = "https://spotify23.p.rapidapi.com/search/?q=the%20killers&type=tracks&offset=0&limit=100&numberOfTopResults=5"
+
+  //// code for fetch 2
+
+  //// use selectedCategory to establish band name
+  //// use crimeNumber to select song
+
+  //// variable for song name and album - cover art?
+
+  let songName = ""
+  let albumName = ""
+  let coverArt = "img src=''"
+
+  ////// fetch 3 - MediaWiki - search WikiPedia
+  ////// follows fetch 2 setting variable songName
+  ////// https://www.mediawiki.org/wiki/API:Main_page
+
+  let endPointWiki = "https://www.mediawiki.org/w/api.php"
+
+  ////// code for fetch 3
+
+  ////// use songName to do a search on Wikipedia
+
+  let ? = "?" // establish variables - types of info we can get
+
 }
-
-songPicker()
 
 

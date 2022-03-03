@@ -25,129 +25,90 @@ function getUserSelections() {
   // variable for crime data for prior year = crimeNumberPrior
   // variable for crime data for following year = crimeNumberFollowing
 
-  //// fetch 2 - Spotify - https://rapidapi.com/Glavier/api/spotify23/
+
+  //// fetch 2 - Spotify
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
-  let apiKeySong = "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592?"
-  let endPointSong = "https://spotify23.p.rapidapi.com/search/?q=the%20killers&type=tracks&offset=0&limit=100&numberOfTopResults=5"
+  //// use selectedCategory to establish band name ------------------------
+  const keyword = "The Killers"
+  //// use selectedCategory to establish band name ------------------------
 
-  //// code for fetch 2
 
-  //// use selectedCategory to establish band name
-  //// use crimeNumber to select song
+  fetch(
+    "https://spotify23.p.rapidapi.com/search/?q=" + keyword + "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "spotify23.p.rapidapi.com",
+        "x-rapidapi-key": "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592",
+      },
+    })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
 
-  //// variable for song name and album - cover art?
+      //random method trigger after seach function ------------------------
 
-  let songName = ""
-  let albumName = ""
-  let coverArt = "img src=''"
+      // does x = crimeNumber? ------------------------
 
-  ////// fetch 3 - MediaWiki - search WikiPedia
-  ////// follows fetch 2 setting variable songName
-  ////// https://www.mediawiki.org/wiki/API:Main_page
+      let x = Math.floor(Math.random() * 100);
+      console.log(x);
 
-  let endPointWiki = "https://www.mediawiki.org/w/api.php"
+      //or use x = # of incident ------------------------
 
-  ////// code for fetch 3
+      //calling var for output of a song
+      let songName = data.tracks.items[x].data.name;
+      let artistName = data.tracks.items[x].data.artists.items[0].profile.name;
+      let albumImg = data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
+      let albumName = data.tracks.items[x].data.albumOfTrack.name;
+      let codeSong = data.tracks.items[x].data.albumOfTrack.id;
+      let songLink = data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl;
 
-  ////// use songName to do a search on Wikipedia
+      //song player on page
+      const musicBox = `<iframe
+              src="https://open.spotify.com/embed/album/${codeSong}?utm_source=generator"
+              width="100%"
+              height="200"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>`;
 
-  let set = "set" // establish variables - types of info we can get
+      //title of the song
+      console.log("song:" + songName);
+      //artist name
+      console.log("artist: " + artistName);
+      //album picture
+      console.log("img: " + albumImg);
+      // album name
+      console.log("album name: " + albumName);
+      //Album link
+      console.log("link: " + songLink);
 
+
+      // render to page
+      document.getElementById('songTitle').innerHTML = songName
+      document.getElementById('bandName').innerHTML = artistName
+      document.getElementById('art').setAttribute('src', albumImg)
+      document.getElementById('albumTitle').innerHTML = albumName
+      document.getElementById("frame").innerHTML = musicBox;
+      // document.getElementById('spotifyLink').setAttribute('href', songLink)
+
+    })
 }
 
 
+////// fetch 3 - MediaWiki - search WikiPedia
+////// follows fetch 2 setting variable songName
+////// https://www.mediawiki.org/wiki/API:Main_page
 
+let endPointWiki = "https://www.mediawiki.org/w/api.php"
 
+////// code for fetch 3
 
+////// use songName to do a search on Wikipedia
 
+let set = "set" // establish variables - types of info we can get
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Bill - Stuff I had been playing with - OLD
-
-// var select = document.getElementById('language');
-// var value = select.options[select.selectedIndex].value;
-// console.log(value);
-
-// attempt at a modal dialog
-
-// attempt at a modal dialog
-
-// numbers from modal dialog
-// crimeCatagory = ""
-// yearNumber = ""
-
-// // fetch 1
-// // Crime Data Explorer API
-
-// let apiKey = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
-// let endPoint = "https://crime-data-explorer.fr.cloud.gov/#"
-
-// function killToKillers({
-//   // searth for crimeNumber
-//   fetch(endPoint apiKey) // include crimeCatagory and yearNumber in search
-// then(function (response) {
-//   return response.json();
-// })
-//   .then(function (data) {
-//     crimeNumber = data.----#
-
-//     // fetch 2 - Spotify - https://rapidapi.com/Glavier/api/spotify23/
-//     // immediately follows setting variable crimeNumber
-
-//     fetch("https://spotify23.p.rapidapi.com/search/?q=the%20killers&type=tracks&offset=0&limit=100&numberOfTopResults=5", {
-//       "method": "GET",
-//       "headers": {
-//         "x-rapidapi-host": "spotify23.p.rapidapi.com",
-//         "x-rapidapi-key": "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592"
-//       }
-//     })
-//       .then(function (response) {
-//         return response.json();
-//       })
-//       .then(function (data) {
-//         song = data.tracks.items[7].data.name
-//         album =
-//           year =
-//           art = //from here or Wikipedia
-//           fetch(wiki API)
-//             .then(function (response) {
-//               return response.json();
-//             })
-//             .then(function (data) {
-//               data to post to page = data.____
-
-//               // MediaWiki - search WikiPedia
-
-//               // https://www.mediawiki.org/wiki/API:Main_page
-
-//               // https://www.mediawiki.org/w/api.php
-//             })
-//       })
-//   })
-
-// // Post all data to page
-// document.getElementById("song").innerHTML = song
-// document.getElementById("album").innerHTML = album
-// document.getElementById("year").innerHTML = year
-// document.getElementById("data").innerHTML = data
-// document.getElementById("data").innerHTML = data
-// document.getElementById("data").innerHTML = data
-// // render to page

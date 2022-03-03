@@ -1,24 +1,114 @@
-// Search
+// Category and Year Select
 
-// fetch 1
+function getUserSelections() {
+  let category = document.getElementById('catagoryInput');
+  let year = document.getElementById('yearInput');
 
-// fetch 2 - Spotify - https://rapidapi.com/Glavier/api/spotify23/
-function fetchMusic() {
-  fetch("https://spotify23.p.rapidapi.com/search/?q=the%20killers&type=tracks&offset=0&limit=100&numberOfTopResults=5", {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-host": "spotify23.p.rapidapi.com",
-      "x-rapidapi-key": "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592"
-    }
-  })
+  let selectedCategory = category.options[category.selectedIndex].value;
+  let selectedYear = year.options[year.selectedIndex].value;
+
+  console.log(selectedCategory, selectedYear);
+
+  // fetch 1
+  // Crime Data Explorer API
+
+  let apiKeyCrime = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
+  let endPointCrime = "https://crime-data-explorer.fr.cloud.gov/#"
+
+  // variable for user selection for Crime category = selectedCategory
+  // variable for user selection for Year - selectedYear
+
+  // code for fetch 1
+
+  // variable for crime data for selected year = crimeNumber
+
+  // variable for crime data for prior year = crimeNumberPrior
+  // variable for crime data for following year = crimeNumberFollowing
+
+
+  //// fetch 2 - Spotify
+  //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
+
+  //// use selectedCategory to establish band name ------------------------
+  const keyword = "The Killers"
+  //// use selectedCategory to establish band name ------------------------
+
+
+  fetch(
+    "https://spotify23.p.rapidapi.com/search/?q=" + keyword + "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "spotify23.p.rapidapi.com",
+        "x-rapidapi-key": "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592",
+      },
+    })
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
-      song = data.tracks.items[7].data.name
-      console.log(song)
+      console.log(data);
+
+      //random method trigger after seach function ------------------------
+
+      // does x = crimeNumber? ------------------------
+
+      let x = Math.floor(Math.random() * 100);
+      console.log(x);
+
+      //or use x = # of incident ------------------------
+
+      //calling var for output of a song
+      let songName = data.tracks.items[x].data.name;
+      let artistName = data.tracks.items[x].data.artists.items[0].profile.name;
+      let albumImg = data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
+      let albumName = data.tracks.items[x].data.albumOfTrack.name;
+      let codeSong = data.tracks.items[x].data.albumOfTrack.id;
+      let songLink = data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl;
+
+      //song player on page
+      const musicBox = `<iframe
+              src="https://open.spotify.com/embed/album/${codeSong}?utm_source=generator"
+              width="100%"
+              height="200"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>`;
+
+      //title of the song
+      console.log("song:" + songName);
+      //artist name
+      console.log("artist: " + artistName);
+      //album picture
+      console.log("img: " + albumImg);
+      // album name
+      console.log("album name: " + albumName);
+      //Album link
+      console.log("link: " + songLink);
+
+
+      // render to page
+      document.getElementById('songTitle').innerHTML = songName
+      document.getElementById('bandName').innerHTML = artistName
+      document.getElementById('art').setAttribute('src', albumImg)
+      document.getElementById('albumTitle').innerHTML = albumName
+      document.getElementById("frame").innerHTML = musicBox;
+      // document.getElementById('spotifyLink').setAttribute('href', songLink)
+
     })
 }
 
-// render to page
+
+////// fetch 3 - MediaWiki - search WikiPedia
+////// follows fetch 2 setting variable songName
+////// https://www.mediawiki.org/wiki/API:Main_page
+
+let endPointWiki = "https://www.mediawiki.org/w/api.php"
+
+////// code for fetch 3
+
+////// use songName to do a search on Wikipedia
+
+let set = "set" // establish variables - types of info we can get
+

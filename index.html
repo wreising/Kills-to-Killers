@@ -33,14 +33,15 @@
     <div class="row">
       <!-- column -->
       <div class="six columns" style="text-align: center;">
-        <label for="exampleRecipientInput">Crime Category</label>
-        <select class="" style="width: 75%" id="catagoryInput">
-          <option id="murderSelect">Murder</option>
-          <option id="robberySelect">Robbery</option>
-          <option id="gtaSelect">Grand Theft Auto</option>
-          <option id="arsonSelect">Arson</option>
-          <option id="assultSelect">Assault</option>
+        <label for="categoryInput">Crime Category</label>
+        <select class="" style="width: 75%" id="categoryInput">
+          <option value="0">Murder</option>
+          <option value="1">Robbery</option>
+          <option value="2">Grand Theft Auto</option>
+          <option value="3">Arson</option>
+          <option value="4">Assault</option>
         </select>
+        <!-- <button id="btn">Select</button> -->
       </div>
       <!-- column end -->
       <!-- column -->
@@ -144,7 +145,7 @@
         <div>
           <h3>Your Song title: <span id="songTitle"></span></h3>
           <h3 id="albumTitle"><span id="albumYear"></span></h3>
-          <h3 id="liveSong">---player---</h3>
+          <h3 id="frame"></h3>
           <!-- <h3 id="spotifyLink"><a href="">Spotify Link</a></h3>  -->
           <h3 id="wikiLink"><a href="">Wikipedia</a></h3>
         </div>

@@ -28,8 +28,8 @@ fetch(
     var albumName = data.tracks.items[x].data.albumOfTrack.name;
     /*     var codeSong = data.tracks.items[x].data.albumOfTrack.id;
      */
-    var codeABC = data.tracks.items[x].data.uri.slice(14, 35);
-    console.log(codeABC);
+    var codeABC = data.tracks.items[x].data.uri.split(":");
+    console.log(codeABC[2]);
 
     document.getElementById("albumTitle").innerHTML = "**" + albumName + "**";
     document.getElementById("bandName").innerHTML = artistName;
@@ -37,7 +37,7 @@ fetch(
     document.getElementById("albumArt").setAttribute("src", albumImg);
 
     const musicBox = `<iframe
-              src="https://open.spotify.com/embed/track/7ooZRpvl0spitXc5Cgtw9i?utm_source=generator"
+              src="https://open.spotify.com/embed/track/${codeABC[2]}?utm_source=generator"
               width="100%"
               height="80"
               frameborder="0"

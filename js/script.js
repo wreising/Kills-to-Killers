@@ -26,6 +26,7 @@ fetch(
     var albumImg =
       data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
     var albumName = data.tracks.items[x].data.albumOfTrack.name;
+    //adding codeABC for a single song and remove codeSong
     var codeABC = data.tracks.items[x].data.uri.split(":");
 
     document.getElementById("albumTitle").innerHTML = "**" + albumName + "**";
@@ -44,6 +45,3 @@ fetch(
 
     document.getElementById("frame").innerHTML = musicBox;
   });
-
-{
-}

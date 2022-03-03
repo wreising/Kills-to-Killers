@@ -26,10 +26,7 @@ fetch(
     var albumImg =
       data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
     var albumName = data.tracks.items[x].data.albumOfTrack.name;
-    /*     var codeSong = data.tracks.items[x].data.albumOfTrack.id;
-     */
     var codeABC = data.tracks.items[x].data.uri.split(":");
-    console.log(codeABC);
 
     document.getElementById("albumTitle").innerHTML = "**" + albumName + "**";
     document.getElementById("bandName").innerHTML = artistName;
@@ -50,16 +47,3 @@ fetch(
 
 {
 }
-
-//need to fix
-/* const musicBox = `<iframe
-              src="https://open.spotify.com/embed/album/${codeSong}?utm_source=generator"
-              width="100%"
-              height="200"
-              frameborder="0"
-              allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            ></iframe>`;
-
-    document.getElementById("frame").innerHTML = musicBox;
-  }); */

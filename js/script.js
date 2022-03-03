@@ -26,20 +26,23 @@ fetch(
     var albumImg =
       data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
     var albumName = data.tracks.items[x].data.albumOfTrack.name;
-    var codeSong = data.tracks.items[x].data.albumOfTrack.id;
-    
+    /*     var codeSong = data.tracks.items[x].data.albumOfTrack.id;
+     */
+    var codeABC = data.tracks.items[x].data.uri.slice(14, 35);
+    console.log(codeABC);
+
     document.getElementById("albumTitle").innerHTML = "**" + albumName + "**";
     document.getElementById("bandName").innerHTML = artistName;
     document.getElementById("songTitle").innerHTML = songName;
     document.getElementById("albumArt").setAttribute("src", albumImg);
 
     const musicBox = `<iframe
-              src="https://open.spotify.com/embed/album/${codeSong}?utm_source=generator"
+              src="https://open.spotify.com/embed/track/7ooZRpvl0spitXc5Cgtw9i?utm_source=generator"
               width="100%"
-              height="200"
+              height="80"
               frameborder="0"
-              allowfullscreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                           
             ></iframe>`;
 
     document.getElementById("frame").innerHTML = musicBox;
@@ -49,3 +52,14 @@ fetch(
 }
 
 //need to fix
+/* const musicBox = `<iframe
+              src="https://open.spotify.com/embed/album/${codeSong}?utm_source=generator"
+              width="100%"
+              height="200"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>`;
+
+    document.getElementById("frame").innerHTML = musicBox;
+  }); */

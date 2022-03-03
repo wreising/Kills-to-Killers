@@ -28,19 +28,68 @@ function getUserSelections() {
   //// fetch 2 - Spotify - https://rapidapi.com/Glavier/api/spotify23/
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
-  let apiKeySong = "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592?"
-  let endPointSong = "https://spotify23.p.rapidapi.com/search/?q=the%20killers&type=tracks&offset=0&limit=100&numberOfTopResults=5"
 
-  //// code for fetch 2
+  let keyword = ''
 
-  //// use selectedCategory to establish band name
-  //// use crimeNumber to select song
+  if (selectedCategory === 'Murder') {
+    keyword = 'The Killers'
+  } else if (selectedCategory === 'Robbery') {
+    keyword = 'The Police'
+  } else if (selectedCategory === 'Grand Theft Auto') {
+    keyword = 'Motorhead'
+  } else if (selectedCategory === 'Arson') {
+    keyword = 'FireHouse'
+  } else {
+    keyword = 'Knife Party'
+  }
 
-  //// variable for song name and album - cover art?
+  fetch(
+    "https://spotify23.p.rapidapi.com/search/?q=" + keyword + "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "spotify23.p.rapidapi.com",
+        "x-rapidapi-key": "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592",
+      },
+    })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
 
-  let songName = ""
-  let albumName = ""
-  let coverArt = "img src=''"
+      //random method trigger after seach function
+      let x = Math.floor(Math.random() * 100);
+      console.log(x);
+
+      //or use x = # of incident
+
+      //calling var for output of a song
+      let songName = data.tracks.items[x].data.name;
+      let artistName = data.tracks.items[x].data.artists.items[0].profile.name;
+      let albumImg = data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
+      let albumName = data.tracks.items[x].data.albumOfTrack.name;
+      let codeABC = data.tracks.items[x].data.uri.split(":");
+
+
+      //song player on page
+      const musicBox = `<iframe
+              src="https://open.spotify.com/embed/track/${codeABC[2]}?utm_source=generator"
+              width="100%"
+              height="80"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                           
+            ></iframe>`;
+      // render to page
+      document.getElementById('songTitle').innerHTML = songName
+      document.getElementById('bandName').innerHTML = artistName
+      document.getElementById('art').setAttribute('src', albumImg)
+      document.getElementById('albumTitle').innerHTML = albumName
+      document.getElementById("frame").innerHTML = musicBox;
+    })
+
+
 
   ////// fetch 3 - MediaWiki - search WikiPedia
   ////// follows fetch 2 setting variable songName
@@ -55,6 +104,8 @@ function getUserSelections() {
   let set = "set" // establish variables - types of info we can get
 
 }
+
+getUserSelections()
 
 
 

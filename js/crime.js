@@ -19,6 +19,8 @@ let crimeNumberSingle = () => {
 
   //if statements for crime/band selection
 
+  selectedCategory = 'Murder'
+
   if (selectedCategory === 'Murder') {
     crimeType = 'homicide'
     let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
@@ -73,7 +75,10 @@ let crimeNumberSingle = () => {
     }
 
   }
-  else if (selectedCategory === 'Robbery') {
+
+  selectedCategory = 'Robbery'
+  
+  if (selectedCategory === 'Robbery') {
     crimeType = 'robbery'
     let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
 
@@ -126,6 +131,8 @@ let crimeNumberSingle = () => {
         })
       }  
     }
+
+  selectedCategory = 'Grand Theft Auto'
 
   if (selectedCategory === 'Grand Theft Auto') {
     crimeType = 'motor-vehicle-theft'
@@ -180,6 +187,9 @@ let crimeNumberSingle = () => {
         })
       }
   }
+
+  selectedCategory = 'Arson'
+
   if (selectedCategory === 'Arson') {
     crimeType = 'arson'
     let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
@@ -233,6 +243,9 @@ let crimeNumberSingle = () => {
         })
       }
     }
+
+  selectedCategory = 'Assault'
+
   if (selectedCategory === 'Assault') {
     crimeType = 'aggravated-assault'
     let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
@@ -289,19 +302,19 @@ let crimeNumberSingle = () => {
     }
 }
 
-let crimeNumberTable = () => {
-  selectedCategory = 'Murder'
-    crimeNumberSingle()
+// let crimeNumberTable = () => {
+//   selectedCategory = 'Murder'
+//     crimeNumberSingle()
 
-  selectedCategory = 'Robbery'
-    crimeNumberSingle()
+//   selectedCategory = 'Robbery'
+//     crimeNumberSingle()
 
-  selectedCategory = 'Grand Theft Auto'
-    crimeNumberSingle()
+//   selectedCategory = 'Grand Theft Auto'
+//     crimeNumberSingle()
 
-  selectedCategory = 'Arson'
-    crimeNumberSingle()
+//   selectedCategory = 'Arson'
+//     crimeNumberSingle()
 
-  selectedCategory = 'Assault'
-    crimeNumberSingle()
-}
+//   selectedCategory = 'Assault'
+//     crimeNumberSingle()
+// }

@@ -5,11 +5,12 @@
 
 // let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
 
-let oneYearDataFetch = () => {
+let crimeType
+
+let crimeNumberSingle = () => {
 
   let category = document.getElementById('catagoryInput');
   let year = document.getElementById('yearInput');
-  let crimeType
 
   let selectedCategory = category.options[category.selectedIndex].value;
   let selectedYear = year.options[year.selectedIndex].value;
@@ -121,6 +122,7 @@ let oneYearDataFetch = () => {
           }
           document.getElementById('robberyNumber-1').innerHTML = totalCleared
         })
+      }  
     }
 
   if (selectedCategory === 'Grand Theft Auto') {
@@ -174,7 +176,7 @@ let oneYearDataFetch = () => {
           }
           document.getElementById('gtaNumber-1').innerHTML = totalCleared
         })
-    
+      }
   }
   if (selectedCategory === 'Arson') {
     crimeType = 'arson'
@@ -227,7 +229,7 @@ let oneYearDataFetch = () => {
           }
           document.getElementById('arsonNumber-1').innerHTML = totalCleared
         })
-    
+      }
     }
   if (selectedCategory === 'Assault') {
     crimeType = 'aggravated-assault'
@@ -281,5 +283,23 @@ let oneYearDataFetch = () => {
           document.getElementById('assaultNumber-1').innerHTML = totalCleared
         })
     
+      }
     }
+}
+
+let crimeNumberTable = () => {
+  selectedCategory = 'Murder'
+    crimeNumberSingle()
+
+  selectedCategory = 'Robbery'
+    crimeNumberSingle()
+
+  selectedCategory = 'Grand Theft Auto'
+    crimeNumberSingle()
+
+  selectedCategory = 'Arson'
+    crimeNumberSingle()
+
+  selectedCategory = 'Assault'
+    crimeNumberSingle()
 }

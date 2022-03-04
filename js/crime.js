@@ -75,7 +75,7 @@ let crimeNumberSingle = () => {
     }
 
   }
-
+  selectedYear = year.options[year.selectedIndex].value;
   selectedCategory = 'Robbery'
   
   if (selectedCategory === 'Robbery') {
@@ -132,6 +132,7 @@ let crimeNumberSingle = () => {
       }  
     }
 
+  selectedYear = year.options[year.selectedIndex].value;
   selectedCategory = 'Grand Theft Auto'
 
   if (selectedCategory === 'Grand Theft Auto') {
@@ -188,6 +189,7 @@ let crimeNumberSingle = () => {
       }
   }
 
+  selectedYear = year.options[year.selectedIndex].value;
   selectedCategory = 'Arson'
 
   if (selectedCategory === 'Arson') {
@@ -244,6 +246,7 @@ let crimeNumberSingle = () => {
       }
     }
 
+  selectedYear = year.options[year.selectedIndex].value;
   selectedCategory = 'Assault'
 
   if (selectedCategory === 'Assault') {
@@ -300,6 +303,7 @@ let crimeNumberSingle = () => {
     
       }
     }
+    
 }
 
 // let crimeNumberTable = () => {

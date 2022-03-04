@@ -5,6 +5,8 @@
 
 // let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
 
+//note - produce full table of data for the year, THEN use if statement to pick the needed data
+
 let crimeType
 
 let crimeNumberSingle = () => {

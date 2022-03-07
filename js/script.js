@@ -489,28 +489,26 @@ function getUserSelections() {
 
       //if statement
 
-      let crimeValue
+      // let crimeValue
 
-      if (selectedCategory === 'Murder') {
-        crimeValue = document.getElementById('murderNumber').innerHTML
-        return crimeValue
-      }
-      if (selectedCategory === 'Robbery') {
-        crimeValue = document.getElementById('robberyNumber').innerHTML
-        return crimeValue
-      }
-      if (selectedCategory === 'Grand Theft Auto') {
-        crimeValue - document.getElementById('gtaNumber').innerHTML
-        return crimeValue
-      }
-      if (selectedCategory === 'Arson') {
-        crimeValue = document.getElementById('arsonNumber').innerHTML
-      }
-      if (selectedCategory === 'Assault') {
-        crimeValue = document.getElementById('assaultNumber').innerHTML
-        return crimeValue
-      }
-      console.log(crimevalue)
+      // if (selectedCategory === 'Murder') {
+      //   crimeValue = document.getElementById('murderNumber').innerHTML
+      // }
+      // if (selectedCategory === 'Robbery') {
+      //   crimeValue = document.getElementById('robberyNumber').innerHTML
+      // }
+      // if (selectedCategory === 'Grand Theft Auto') {
+      //   crimeValue - document.getElementById('gtaNumber').innerHTML
+      // }
+      // if (selectedCategory === 'Arson') {
+      //   crimeValue = document.getElementById('arsonNumber').innerHTML
+      // }
+      // if (selectedCategory === 'Assault') {
+      //   crimeValue = document.getElementById('assaultNumber').innerHTML
+      // }
+      // console.log(crimevalue)
+
+      console.log(document.getElementById('gtaNumber').innerHTML)
       //random method trigger after seach function ------------------------
 
       // does x = crimeNumber? ------------------------

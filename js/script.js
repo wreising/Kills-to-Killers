@@ -520,7 +520,8 @@ function getUserSelections() {
   let keyword;
   let crimeValue;
   console.log(selectedCategory)
-
+  console.log(document.getElementById("murderNumber").value)
+  
   if (selectedCategory === "Murder") {
     crimeValue = document.getElementById("murderNumber").value;
     keyword = 'The Killers'

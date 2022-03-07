@@ -11,7 +11,7 @@
   <!-- foundation -->
   <link rel="stylesheet" href="css/foundation.css">
   <link rel="stylesheet" href="css/app.css">
-  
+
   <!-- fonts -->
 
   <!-- css -->
@@ -27,139 +27,144 @@
   </header>
 
   <!-- modal -->
-<div class="reveal" id="exampleModal1" data-reveal>
-  <h2>Select Category and Year</h2>
-  <div class="horizontal-center" style="text-align: center;">
-    <label for="userInputCategory">Category of Crime you want to use to select a song:</label>
-    <select class="" style="width: 25%; text-align: center;" id="catagoryInput">
-      <option id="murderSelect">Murder</option>
-      <option id="robberySelect">Robbery</option>
-      <option id="gtaSelect">Grand Theft Auto</option>
-      <option id="arsonSelect">Arson</option>
-      <option id="assultSelect">Assault</option>
-    </select>
+  <div class="reveal" id="exampleModal1" data-reveal>
+    <h2>Select Category and Year</h2>
+    <div class="horizontal-center" style="text-align: center;">
+      <label for="userInputCategory">Category of Crime you want to use to select a song:</label>
+      <select class="" style="width: 25%; text-align: center;" id="catagoryInput">
+        <option id="murderSelect">Murder</option>
+        <option id="robberySelect">Robbery</option>
+        <option id="gtaSelect">Grand Theft Auto</option>
+        <option id="arsonSelect">Arson</option>
+        <option id="assultSelect">Assault</option>
+      </select>
+    </div>
+    <div class="horizontal-center" style="text-align: center">
+      <label for="userInputYear">Select a year to use. Try selecting your Birth Year;</label>
+      <select class="" style="width: 25%; text-align: center" id="yearInput">
+        <option id="1985">1978</option>
+        <option id="1985">1979</option>
+        <option id="1985">1980</option>
+        <option id="1985">1981</option>
+        <option id="1985">1982</option>
+        <option id="1985">1983</option>
+        <option id="1985">1984</option>
+        <option id="1985">1985</option>
+        <option id="1986">1986</option>
+        <option id="1987">1987</option>
+        <option id="1988">1988</option>
+        <option id="1989">1989</option>
+        <option id="1990">1990</option>
+        <option id="1991">1991</option>
+        <option id="1992">1992</option>
+        <option id="1993">1993</option>
+        <option id="1994">1994</option>
+        <option id="1995">1995</option>
+        <option id="1996">1996</option>
+        <option id="1997">1997</option>
+        <option id="1998">1998</option>
+        <option id="1999">1999</option>
+        <option id="2000">2000</option>
+        <option id="2001">2001</option>
+        <option id="2002">2002</option>
+        <option id="2003">2003</option>
+        <option id="2004">2004</option>
+        <option id="2005">2005</option>
+        <option id="2006">2006</option>
+        <option id="2007">2007</option>
+        <option id="2008">2008</option>
+        <option id="2009">2009</option>
+        <option id="2010">2010</option>
+      </select>
+    </div>
+    <div style="text-align: center; margin-right: auto; margin-left: auto;">
+      <button class="button vertical-center" data-close aria-label="Close modal"
+        onclick="getUserSelections()">Submit</button>
+    </div>
   </div>
-  <div class="horizontal-center" style="text-align: center">
-    <label for="userInputYear">Select a year to use. Try selecting your Birth Year;</label>
-    <select class="" style="width: 25%; text-align: center" id="yearInput">
-      <option id="1985">1978</option>
-      <option id="1985">1979</option>
-      <option id="1985">1980</option>
-      <option id="1985">1981</option>
-      <option id="1985">1982</option>
-      <option id="1985">1983</option>
-      <option id="1985">1984</option>
-      <option id="1985">1985</option>
-      <option id="1986">1986</option>
-      <option id="1987">1987</option>
-      <option id="1988">1988</option>
-      <option id="1989">1989</option>
-      <option id="1990">1990</option>
-      <option id="1991">1991</option>
-      <option id="1992">1992</option>
-      <option id="1993">1993</option>
-      <option id="1994">1994</option>
-      <option id="1995">1995</option>
-      <option id="1996">1996</option>
-      <option id="1997">1997</option>
-      <option id="1998">1998</option>
-      <option id="1999">1999</option>
-      <option id="2000">2000</option>
-      <option id="2001">2001</option>
-      <option id="2002">2002</option>
-      <option id="2003">2003</option>
-      <option id="2004">2004</option>
-      <option id="2005">2005</option>
-      <option id="2006">2006</option>
-      <option id="2007">2007</option>
-      <option id="2008">2008</option>
-      <option id="2009">2009</option>
-      <option id="2010">2010</option>
-    </select>
-  </div>
-  <div style="text-align: center; margin-right: auto; margin-left: auto;">
-    <button class="button vertical-center" data-close aria-label="Close modal" onclick="getUserSelections()">Submit</button>
-  </div>
-</div>
   <!-- modal end -->
 
   <!-- container -->
   <!-- <div class="grid-container"> -->
-    <!-- grid-x button for modal -->
-    <div class="grid-x grid-margin-x">
-      <!-- cell button for modal-->
-      <div class="cell small-8 medium-6 large-6 card" style="text-align: center; margin-right: auto; margin-left: auto; padding-top: 15px;">
-        <p><button class="button clear secondary large vertical-center" data-open="exampleModal1">Click to enter New<br>Crime Category and Year</button></p>
-      </div>
-      <!-- cell button for modal end -->
+  <!-- grid-x button for modal -->
+  <div class="grid-x grid-margin-x">
+    <!-- cell button for modal-->
+    <div class="cell small-8 medium-6 large-6 card"
+      style="text-align: center; margin-right: auto; margin-left: auto; padding-top: 15px;">
+      <p><button class="button clear secondary large vertical-center" data-open="exampleModal1">Click to enter
+          New<br>Crime Category and Year</button></p>
     </div>
-    <!-- grid-x content crime data and music info -->
-    <div class="grid-x grid-margin-x">
-      <!-- cell crime data -->
-      <div class="cell small-10 medium-10 large-6 card" style="padding-top: 5px; padding-bottom: 15px; margin-right: auto; margin-left: auto;">
-        <h2>Crime Data for:</h2>
-        <h2 id="headingYear" style="color: red;"></h2>
-        <table class="" style="width: 80%; margin-left: auto; margin-right: auto">
-          <thead>
-            <tr>
-              <th style="font-size: large;">Category</th>
-              <th style="font-size: larger;">Prior Year</th>
-              <th style="font-size: larger;">Selected Year</th>
-              <th style="font-size: larger;">Next Year</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Murder</td>
-              <td id="murderNumber-1">#</td>
-              <td id="murderNumber">#</td>
-              <td id="murderNumber+1">#</td>
-            </tr>
-            <tr>
-              <td>Robery</td>
-              <td id="robberyNumber-1">#</td>
-              <td id="robberyNumber">#</td>
-              <td id="robberyNumber+1">#</td>
-            </tr>
-            <tr>
-              <td>Grand Theft Auto</td>
-              <td id="gtaNumber-1">#</td>
-              <td id="gtaNumber">#</td>
-              <td id="gtaNumber+1">#</td>
-            </tr>
-            <tr>
-              <td>Arson</td>
-              <td id="arsonNumber-1">#</td>
-              <td id="arsonNumber">#</td>
-              <td id="arsonNumber+1">#</td>
-            </tr>
-            <tr>
-              <td>Assault</td>
-              <td id="assaultNumber-1">#</td>
-              <td id="assaultNumber">#</td>
-              <td id="assaultNumber+1">#</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- cell crime data end -->
-      <!-- cell music info -->
-      <div class="cell small-10 medium-10 large-6 card" style="text-align: center; margin-left: auto; margin-right: auto; padding-top: 5px;">
-            <h2>Music</h2>
-            <h3>Band: <span id="bandName"></span></h3>
-            <div id="albumArt">
-              <img src="" alt="" id="art" style="max-width: 90%;">
-            </div>
-            <div>
-              <h3>Your Song title: <span id="songTitle"></span></h3>
-              <h3>Album Title: <span id="albumTitle"></span></h3>
-              <h3 id="frame" style="width: 80%; margin-left: auto; margin-right: auto;"></h3>
-              <h3 id="wikiLink"><a href="">Wikipedia</a></h3>
-        </div>
-      </div>
-      <!-- cell music info end -->
+    <!-- cell button for modal end -->
+  </div>
+  <!-- grid-x content crime data and music info -->
+  <div class="grid-x grid-margin-x">
+    <!-- cell crime data -->
+    <div class="cell small-10 medium-10 large-6 card"
+      style="padding-top: 5px; padding-bottom: 15px; margin-right: auto; margin-left: auto;">
+      <h2>Crime Data for:</h2>
+      <h2 id="headingYear" style="color: red;"></h2>
+      <table class="" style="width: 80%; margin-left: auto; margin-right: auto">
+        <thead>
+          <tr>
+            <th style="font-size: large;">Category</th>
+            <th style="font-size: larger;">Prior Year</th>
+            <th style="font-size: larger;">Selected Year</th>
+            <th style="font-size: larger;">Next Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Murder</td>
+            <td id="murderNumber-1">#</td>
+            <td id="murderNumber">#</td>
+            <td id="murderNumber+1">#</td>
+          </tr>
+          <tr>
+            <td>Robery</td>
+            <td id="robberyNumber-1">#</td>
+            <td id="robberyNumber">#</td>
+            <td id="robberyNumber+1">#</td>
+          </tr>
+          <tr>
+            <td>Grand Theft Auto</td>
+            <td id="gtaNumber-1">#</td>
+            <td id="gtaNumber">#</td>
+            <td id="gtaNumber+1">#</td>
+          </tr>
+          <tr>
+            <td>Arson</td>
+            <td id="arsonNumber-1">#</td>
+            <td id="arsonNumber">#</td>
+            <td id="arsonNumber+1">#</td>
+          </tr>
+          <tr>
+            <td>Assault</td>
+            <td id="assaultNumber-1">#</td>
+            <td id="assaultNumber">#</td>
+            <td id="assaultNumber+1">#</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <!-- grid-x crime data and music info end -->
+    <!-- cell crime data end -->
+    <!-- cell music info -->
+    <div class="cell small-10 medium-10 large-6 card"
+      style="text-align: center; margin-left: auto; margin-right: auto; padding-top: 5px;">
+      <h2>Music</h2>
+      <h3>Band: <span id="bandName"></span></h3>
+      <div id="albumArt">
+        <img src="" alt="" id="art" style="max-width: 90%;">
+      </div>
+      <div>
+        <h3>Your Song title: <span id="songTitle"></span></h3>
+        <h3>Album Title: <span id="albumTitle"></span></h3>
+        <h3 id="frame" style="width: 80%; margin-left: auto; margin-right: auto;"></h3>
+        <h3 id="wikiLink"><a href="">Wikipedia</a></h3>
+      </div>
+    </div>
+    <!-- cell music info end -->
+  </div>
+  <!-- grid-x crime data and music info end -->
   <!-- </div> -->
   <!-- container end -->
 
@@ -175,7 +180,6 @@
   <script src="js/app.js"></script>
   <!-- Javascript -->
   <script src="js/script.js"></script>
-  <!-- <script src="js/crime.js"></script> -->
 
   <footer>
     <a href="./about-us.html">About our Group</a> - © 2022

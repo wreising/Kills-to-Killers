@@ -507,14 +507,14 @@ function getUserSelections() {
 
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
 
-  let keyword = selectedCategory;
-  console.log(keyword);
+  // let keyword = selectedCategory;
+  // console.log(keyword);
 
   //if statement
 
 
 
-  let keyword = localStorage.getItem("category");
+  // let keyword = localStorage.getItem("category");
   // let crimeValue = ""
 
   // console.log(crimeValue);

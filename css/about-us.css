@@ -6,7 +6,14 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  margin-right: auto;
+  margin-left: auto;
 }
+
+/* .card {
+  margin-top: 20px;
+  
+} */
 
 .column {
   float: left;
@@ -31,7 +38,10 @@ header {
 }
 
 .container {
-  padding: 0 16px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
 }
 
 .container::after,

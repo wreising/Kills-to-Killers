@@ -482,6 +482,7 @@ function getUserSelections() {
     }
   }
 
+
   // variable for crime data for selected year = crimeNumber
 
   // variable for crime data for prior year = crimeNumberPrior
@@ -491,10 +492,12 @@ function getUserSelections() {
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
+
   let keyword = selectedCategory;
   let crimeValue = totalCleared;
 
   console.log(crimeValue);
+
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" +

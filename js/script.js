@@ -560,7 +560,7 @@ function getUserSelections() {
               height="80"
               frameborder="0"
               allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
             ></iframe>`;
 
       //title of the song

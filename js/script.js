@@ -7,6 +7,9 @@ function getUserSelections() {
   let selectedCategory = category.options[category.selectedIndex].value;
   let selectedYear = year.options[year.selectedIndex].value;
 
+  localStorage.setItem("category", selectedCategory)
+  localStorage.setItem("year", selectedYear)
+
   console.log(selectedCategory, selectedYear);
 
   // fetch 1

@@ -1,12 +1,10 @@
 // Onload year and data
 
 // add for all saved data for that seleted year
-// _________________________________________________________
 
 function loadPreviousData() {
-  // _________________________________________________________
+  // post saved year
 
-  // Previous saved year
   let savedYear = localStorage.getItem("year");
   let savedCategory = localStorage.getItem("category");
   document.getElementById("headingYear").innerHTML = savedYear;
@@ -14,7 +12,8 @@ function loadPreviousData() {
 
   // _________________________________________________________
 
-  // Previous crime data table
+  //data chart local save
+
   let murderNumber = localStorage.getItem("murderNumber");
   let murderNumberPlus = localStorage.getItem("murderNumber+1");
   let murderNumberMinus = localStorage.getItem("murderNumber-1");
@@ -104,32 +103,15 @@ function loadPreviousData() {
   document.getElementById("assaultNumber").innerHTML = assaultNumber;
   document.getElementById("assaultNumber+1").innerHTML = assaultNumberPlus;
   document.getElementById("assaultNumber-1").innerHTML = assaultNumberMinus;
-
-  // _________________________________________________________
-
-  // Previous Music
-  let songName = localStorage.getItem("songTitle")
-  let artistName = localStorage.getItem("bandName")
-  let albumImg = localStorage.getItem("art")
-  let albumName = localStorage.getItem("albumTitle")
-  let musicBox = localStorage.getItem("frame")
-
-  document.getElementById("songTitle").innerHTML = songName
-  document.getElementById("bandName").innerHTML = artistName
-  document.getElementById("art").setAttribute("src", albumImg);
-  document.getElementById("albumTitle").innerHTML = albumName
-  document.getElementById("frame").innerHTML = musicBox
-
 }
-// _________________________________________________________
 
-loadPreviousData(); // invoke loadPreviousData() on page load
-// _________________________________________________________
+loadPreviousData();
+
+//crime data table production
+
+// Category and Year Select
 
 function getUserSelections() {
-  // _________________________________________________________
-
-  // user input - post year and category to page
   let category = document.getElementById("catagoryInput");
   let year = document.getElementById("yearInput");
 
@@ -143,9 +125,7 @@ function getUserSelections() {
 
   document.getElementById("headingYear").innerHTML = selectedYear;
   document.getElementById("headingCategory").innerHTML = selectedCategory;
-  // _________________________________________________________
 
-  // user input - music data
   let songName = localStorage.getItem("songTitle")
   let artistName = localStorage.getItem("bandName")
   let albumImg = localStorage.getItem("art")
@@ -154,18 +134,36 @@ function getUserSelections() {
 
   document.getElementById("songTitle").innerHTML = songName;
   document.getElementById("bandName").innerHTML = artistName;
-  document.getElementById("art").setAttribute("src", albumImg);
+  document.getElementById("art").innerHTML = albumImg;
   document.getElementById("albumTitle").innerHTML = albumName;
   document.getElementById("frame").innerHTML = musicBox;
 
-  // _________________________________________________________
 
-  // Crime data table
+  //if statement for selecting the category and retrieving the data from the table
+
+  // fetch 1
+  // Crime Data Explorer API
+
+  // let apiKeyCrime = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
+  // let endPointCrime = "https://crime-data-explorer.fr.cloud.gov/#"
+
+  // variable for user selection for Crime category = selectedCategory
+  // variable for user selection for Year - selectedYear
+
+  // code for fetch 1
+
   let crimeType;
 
-  // _________________________________________________________
+  // let category = document.getElementById('catagoryInput');
+  // let year = document.getElementById('yearInput');
 
-  // Murder
+  // let selectedCategory = category.options[category.selectedIndex].value;
+  // let selectedYear = year.options[year.selectedIndex].value;
+
+  //if statements for crime/band selection
+
+  // selectedCategory = 'Murder'
+
   if (selectedCategory === "Murder") {
     crimeType = "homicide";
     let crimeApi =
@@ -233,10 +231,9 @@ function getUserSelections() {
         });
     }
   }
+  selectedYear = year.options[year.selectedIndex].value;
+  selectedCategory = "Robbery";
 
-  // _________________________________________________________
-
-  // Robbery
   if (selectedCategory === "Robbery") {
     crimeType = "robbery";
     let crimeApi =
@@ -300,9 +297,7 @@ function getUserSelections() {
         });
     }
   }
-  // _________________________________________________________
 
-  // Grand Theft Auto
   selectedYear = year.options[year.selectedIndex].value;
   selectedCategory = "Grand Theft Auto";
 
@@ -370,9 +365,6 @@ function getUserSelections() {
     }
   }
 
-  // _________________________________________________________
-
-  // Arson
   selectedYear = year.options[year.selectedIndex].value;
   selectedCategory = "Arson";
 
@@ -440,9 +432,6 @@ function getUserSelections() {
     }
   }
 
-  // _________________________________________________________
-
-  // Assault
   selectedYear = year.options[year.selectedIndex].value;
   selectedCategory = "Assault";
 
@@ -511,9 +500,21 @@ function getUserSelections() {
     }
   }
 
-  // _________________________________________________________
 
-  // Music
+  // variable for crime data for selected year = crimeNumber
+
+  // variable for crime data for prior year = crimeNumberPrior
+  // variable for crime data for following year = crimeNumberFollowing
+
+  //// fetch 2 - Spotify
+  //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
+
+  //// use selectedCategory and totalCleared to establish band name and song number ------------------------
+  // let crimeValue = ""
+
+  // console.log(crimeValue);
+
+
   selectedCategory = category.options[category.selectedIndex].value;
 
   let keyword;
@@ -538,6 +539,9 @@ function getUserSelections() {
   }
   console.log(crimeValue);
   console.log(keyword)
+
+
+
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" +
@@ -565,6 +569,8 @@ function getUserSelections() {
       // let x = crimeValue
       let x = Math.floor(Math.random() * 10);
       console.log(x);
+
+      //or use x = # of incident ------------------------
 
       //calling var for output of a song
       let songName = data.tracks.items[x].data.name;
@@ -597,7 +603,6 @@ function getUserSelections() {
       //Album link
       console.log("link: " + songLink);
 
-      // save to local storage
       localStorage.setItem("songTitle", songName)
       localStorage.setItem("bandName", artistName)
       localStorage.setItem("art", albumImg)
@@ -611,6 +616,5 @@ function getUserSelections() {
       document.getElementById("albumTitle").innerHTML = albumName;
       document.getElementById("frame").innerHTML = musicBox;
       // document.getElementById('spotifyLink').setAttribute('href', songLink)
-
     });
 }

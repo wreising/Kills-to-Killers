@@ -1,6 +1,10 @@
 # Kills to Killers
 
-Number of selected catagory of crimes by state by year translated to one of the top songs by selected general artists.
+User input is one of 5 categories of crime and a year between 1978 and 2010 with the suggestion that the year be the user's birht year.
+
+The combination of crime cateogry and year is used to look up the number of such crimes committed in California that year.
+
+That number of crimes and their category are used to search Spotify for a song by a band based on the crime catogry as listed below. Song, album, and album art are displayed to the user.
 
 ### Murder - The Killers
 ### Robbery - The Police
@@ -10,12 +14,18 @@ Number of selected catagory of crimes by state by year translated to one of the 
 
 ## Crime Data Explorer
 
-https://crime-data-explorer.fr.cloud.gov/#
+https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/
 
-API Key = psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g
+API Key = iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
 
 ## Spotify API
-
+  
 https://rapidapi.com/Glavier/api/spotify23/
 
 API Key = 13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592
+
+## Wikipedia API
+
+https://www.mediawiki.org/wiki/API:Main_page
+
+https://www.mediawiki.org/w/api.php

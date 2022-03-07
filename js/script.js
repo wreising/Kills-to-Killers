@@ -493,16 +493,15 @@ function getUserSelections() {
 
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
 
-  let keyword = selectedCategory;
+  let keyword = localStorage.getItem("category");
   let crimeValue = totalCleared;
 
   console.log(crimeValue);
 
-
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" +
-      keyword +
-      "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
+    keyword +
+    "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
     {
       method: "GET",
       headers: {
@@ -523,17 +522,13 @@ function getUserSelections() {
 
       if (selectedCategory === "Murder") {
         crimeValue = document.getElementById("murderNumber").value;
-      }
-      if (selectedCategory === "Robbery") {
+      } else if (selectedCategory === "Robbery") {
         crimeValue = document.getElementById("robberyNumber").value;
-      }
-      if (selectedCategory === "Grand Theft Auto") {
+      } else if (selectedCategory === "Grand Theft Auto") {
         crimeValue - document.getElementById("gtaNumber").value;
-      }
-      if (selectedCategory === "Arson") {
+      } else if (selectedCategory === "Arson") {
         crimeValue = document.getElementById("arsonNumber").value;
-      }
-      if (selectedCategory === "Assault") {
+      } else if (selectedCategory === "Assault") {
         crimeValue = document.getElementById("assaultNumber").value;
       }
       console.log(crimeValue);

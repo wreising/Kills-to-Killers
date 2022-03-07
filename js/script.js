@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // The Killer album match to Murder
 fetch(
   "https://spotify23.p.rapidapi.com/search/?q=the%20killers&type=tracks&offset=0&limit=100&numberOfTopResults=5",
@@ -46,7 +45,6 @@ fetch(
 
     document.getElementById("frame").innerHTML = musicBox;
   });
-=======
 // Onload year and data
 
 // add for all saved data for that seleted year
@@ -676,4 +674,3 @@ function getUserSelections() {
 
     });
 }
->>>>>>> main

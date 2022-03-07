@@ -506,15 +506,7 @@ function getUserSelections() {
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
-
-  let keyword = selectedCategory;
-  console.log(keyword);
-
-  //if statement
-
-
-
-  let keyword = localStorage.getItem("category");
+  
   // let crimeValue = ""
 
   // console.log(crimeValue);

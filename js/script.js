@@ -122,6 +122,19 @@ function getUserSelections() {
   document.getElementById("headingYear").innerHTML = selectedYear;
   document.getElementById("headingCategory").innerHTML = selectedCategory;
 
+  let songName = localStorage.getItem("songTitle")
+  let artistName = localStorage.getItem("bandName")
+  let albumImg = localStorage.getItem("art")
+  let albumName = localStorage.getItem("albumTitle")
+  let musicBox = localStorage.getItem("frame")
+
+  document.getElementById("songTitle").innerHTML = songName;
+  document.getElementById("bandName").innerHTML = artistName;
+  document.getElementById("art").innerHTML = albumImg;
+  document.getElementById("albumTitle").innerHTML = albumName;
+  document.getElementById("frame").innerHTML = musicBox;
+
+
   //if statement for selecting the category and retrieving the data from the table
 
   // fetch 1
@@ -472,12 +485,13 @@ function getUserSelections() {
           return response.json();
         })
         .then(function (data) {
-          //console.log(data)
+          // console.log(data)
           for (let i = 0; i < data.results.length; i++) {
             totalCleared += data.results[i].cleared;
           }
           document.getElementById("assaultNumber-1").innerHTML = totalCleared;
           localStorage.setItem("assaultNumber-1", totalCleared);
+          console.log(totalCleared)
         });
     }
   }
@@ -494,9 +508,9 @@ function getUserSelections() {
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
 
   let keyword = localStorage.getItem("category");
-  let crimeValue = totalCleared;
+  // let crimeValue = ""
 
-  console.log(crimeValue);
+  // console.log(crimeValue);
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" +
@@ -571,6 +585,12 @@ function getUserSelections() {
       console.log("album name: " + albumName);
       //Album link
       console.log("link: " + songLink);
+
+      localStorage.setItem("songTitle", songName)
+      localStorage.setItem("bandName", artistName)
+      localStorage.setItem("art", albumImg)
+      localStorage.setItem("albumTitle", albumName)
+      localStorage.setItem("frame", musicBox)
 
       // render to page
       document.getElementById("songTitle").innerHTML = songName;

@@ -1,10 +1,14 @@
 // Onload year and data
 
-let savedYear = localStorage.getItem("year")
+
 
 // add for all saved data for that seleted year
 
 function loadPreviousData() {
+
+  // post saved year
+
+  let savedYear = localStorage.getItem("year")
   document.getElementById('headingYear').innerHTML = savedYear
 
   //data chart local save
@@ -107,6 +111,7 @@ function loadPreviousData() {
 // Category and Year Select
 
 function getUserSelections() {
+
   let category = document.getElementById('catagoryInput');
   let year = document.getElementById('yearInput');
 
@@ -145,6 +150,8 @@ function getUserSelections() {
     crimeType = 'homicide'
     let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
 
+    console.log(crimeApi)
+
     let totalCleared = 0
 
     fetch(crimeApi)
@@ -159,6 +166,8 @@ function getUserSelections() {
         document.getElementById('murderNumber').innerHTML = totalCleared
         localStorage.setItem('murderNumber', totalCleared)
       })
+
+    console.log(totalCleared)
 
     selectedYear++
     totalCleared = 0
@@ -452,9 +461,9 @@ function getUserSelections() {
   //// fetch 2 - Spotify
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
-  //// use selectedCategory to establish band name ------------------------
+  //// use selectedCategory and totalCleared to establish band name and song number ------------------------
   let keyword = selectedCategory
-  //// use selectedCategory to establish band name ------------------------
+  let crimeValue = totalCleard
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" + keyword + "&type=tracks&offset=0&limit=100&numberOfTopResults=5",

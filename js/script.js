@@ -8,7 +8,10 @@ function loadPreviousData() {
 
   // Previous saved year
   let savedYear = localStorage.getItem("year");
+  let savedCategory = localStorage.getItem("category");
   document.getElementById("headingYear").innerHTML = savedYear;
+  document.getElementById("headingCategory").innerHTML = savedCategory;
+
   // _________________________________________________________
 
   // Previous crime data table

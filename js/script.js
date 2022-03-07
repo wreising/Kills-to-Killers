@@ -513,13 +513,18 @@ function getUserSelections() {
   //if statement
 
 
+
   let keyword = localStorage.getItem("category");
   // let crimeValue = ""
 
   // console.log(crimeValue);
 
+
+  selectedCategory = category.options[category.selectedIndex].value;
+
   let keyword;
   let crimeValue;
+  console.log(selectedCategory)
 
   if (selectedCategory === "Murder") {
     crimeValue = document.getElementById("murderNumber").value;
@@ -533,7 +538,7 @@ function getUserSelections() {
   } else if (selectedCategory === "Arson") {
     crimeValue = document.getElementById("arsonNumber").value;
     keyword = 'FireHouse'
-  } else if (selectedCategory === "Assault") {
+  } else {
     crimeValue = document.getElementById("assaultNumber").value;
     keyword = 'Knife Party'
   }

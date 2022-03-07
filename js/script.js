@@ -494,22 +494,28 @@ function getUserSelections() {
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
   //if statement
 
+  let keyword;
   let crimeValue;
 
   if (selectedCategory === "Murder") {
     crimeValue = document.getElementById("murderNumber").value;
+    keyword = 'The Killers'
   } else if (selectedCategory === "Robbery") {
     crimeValue = document.getElementById("robberyNumber").value;
+    keyword = 'The Police'
   } else if (selectedCategory === "Grand Theft Auto") {
     crimeValue - document.getElementById("gtaNumber").value;
+    keyword = 'Motorhead'
   } else if (selectedCategory === "Arson") {
     crimeValue = document.getElementById("arsonNumber").value;
+    keyword = 'FireHouse'
   } else if (selectedCategory === "Assault") {
     crimeValue = document.getElementById("assaultNumber").value;
+    keyword = 'Knife Party'
   }
   console.log(crimeValue);
+  console.log(keyword)
 
-  let keyword = localStorage.getItem("category");
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" +

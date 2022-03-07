@@ -492,9 +492,6 @@ function getUserSelections() {
 
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
   let keyword = selectedCategory;
-  let crimeValue = totalCleared;
-
-  console.log(crimeValue);
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" +
@@ -516,7 +513,7 @@ function getUserSelections() {
 
       //if statement
 
-      let crimeValue;
+      let crimeValue = totalCleared;
 
       if (selectedCategory === "Murder") {
         crimeValue = document.getElementById("murderNumber").value;
@@ -533,7 +530,7 @@ function getUserSelections() {
       if (selectedCategory === "Assault") {
         crimeValue = document.getElementById("assaultNumber").value;
       }
-      console.log(crimeValue);
+
       //random method trigger after seach function ------------------------
 
       // does x = crimeNumber? ------------------------

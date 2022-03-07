@@ -84,19 +84,21 @@
   <!-- modal end -->
 
   <!-- container -->
-  <div class="grid-container">
-    <!-- grid-x -->
+  <!-- <div class="grid-container"> -->
+    <!-- grid-x button for modal -->
     <div class="grid-x grid-margin-x">
-      <!-- cell -->
-      <div class="cell small-6 card" style="text-align: center; margin-right: auto; margin-left: auto; padding-top: 15px;">
-        <p><button class="button clear secondary large vertical-center" data-open="exampleModal1">Click to enter<br>Crime Category and Year</button></p>
+      <!-- cell button for modal-->
+      <div class="cell small-8 medium-6 large-6 card" style="text-align: center; margin-right: auto; margin-left: auto; padding-top: 15px;">
+        <p><button class="button clear secondary large vertical-center" data-open="exampleModal1">Click to enter New<br>Crime Category and Year</button></p>
       </div>
-      <!-- cell end -->
+      <!-- cell button for modal end -->
     </div>
+    <!-- grid-x content crime data and music info -->
     <div class="grid-x grid-margin-x">
-      <!-- cell -->
-      <div class="cell small-6 card" style="padding-top: 5px; padding-bottom: 15px;">
-        <h2>Crime Data</h2>
+      <!-- cell crime data -->
+      <div class="cell small-10 medium-10 large-6 card" style="padding-top: 5px; padding-bottom: 15px; margin-right: auto; margin-left: auto;">
+        <h2>Crime Data for:</h2>
+        <h2 id="headingYear" style="color: red;"></h2>
         <table class="" style="width: 80%; margin-left: auto; margin-right: auto">
           <thead>
             <tr>
@@ -140,9 +142,9 @@
           </tbody>
         </table>
       </div>
-      <!-- cell end -->
-      <!-- cell -->
-      <div class="cell small-6 card" style="text-align: center; margin-left: auto; margin-right: auto; padding-top: 5px;">
+      <!-- cell crime data end -->
+      <!-- cell music info -->
+      <div class="cell small-10 medium-10 large-6 card" style="text-align: center; margin-left: auto; margin-right: auto; padding-top: 5px;">
             <h2>Music</h2>
             <h3>Band: <span id="bandName"></span></h3>
             <div id="albumArt">
@@ -155,10 +157,10 @@
               <h3 id="wikiLink"><a href="">Wikipedia</a></h3>
         </div>
       </div>
-      <!-- cell end -->
+      <!-- cell music info end -->
     </div>
-    <!-- grid-x end -->
-  </div>
+    <!-- grid-x crime data and music info end -->
+  <!-- </div> -->
   <!-- container end -->
 
   <!-- JQuery -->
@@ -176,7 +178,7 @@
   <!-- <script src="js/crime.js"></script> -->
 
   <footer>
-    <a href="./about-us.html">About our Group</a>
+    <a href="./about-us.html">About our Group</a> - © 2022
   </footer>
 
 </body>

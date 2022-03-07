@@ -21,14 +21,17 @@
 }
 
 .card {
-  /* padding: 20px;
-  margin: 10px; */
   border-radius: 10px;
   background-color: antiquewhite;
 }
 
-.button {
-  padding: 0px;
+footer {
+  width: 75%;
+  border-radius: 10px;
+  background-color: rgb(253, 242, 242);
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
 }
 
 /* CSS for HTML Elements */

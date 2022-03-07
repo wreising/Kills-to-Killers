@@ -1,3 +1,15 @@
+// Onload year and data
+
+let savedYear = localStorage.getItem("year")
+
+// add for all saved data for that seleted year
+
+function loadPreviousData() {
+  document.getElementById('headingYear').innerHTML = savedYear
+}
+
+loadPreviousData()
+
 // Category and Year Select
 
 function getUserSelections() {
@@ -6,6 +18,8 @@ function getUserSelections() {
 
   let selectedCategory = category.options[category.selectedIndex].value;
   let selectedYear = year.options[year.selectedIndex].value;
+
+  document.getElementById('headingYear').innerHTML = selectedYear
 
   localStorage.setItem("category", selectedCategory)
   localStorage.setItem("year", selectedYear)
@@ -17,7 +31,8 @@ function getUserSelections() {
 
   // let apiKeyCrime = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
   // let endPointCrime = "https://crime-data-explorer.fr.cloud.gov/#"
-  let crimeType
+
+  let crimeType = ""
 
   // variable for user selection for Crime category = selectedCategory
   // variable for user selection for Year - selectedYear
@@ -394,11 +409,11 @@ function getUserSelections() {
 ////// follows fetch 2 setting variable songName
 ////// https://www.mediawiki.org/wiki/API:Main_page
 
-let endPointWiki = "https://www.mediawiki.org/w/api.php"
+// let endPointWiki = "https://www.mediawiki.org/w/api.php"
 
 ////// code for fetch 3
 
 ////// use songName to do a search on Wikipedia
 
-let set = "set" // establish variables - types of info we can get
+// let set = "set" // establish variables - types of info we can get
 

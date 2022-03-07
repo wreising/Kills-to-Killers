@@ -12,23 +12,16 @@ function getUserSelections() {
   // fetch 1
   // Crime Data Explorer API
 
-  let apiKeyCrime = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
-  let endPointCrime = "https://crime-data-explorer.fr.cloud.gov/#"
+  // let apiKeyCrime = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
+  // let endPointCrime = "https://crime-data-explorer.fr.cloud.gov/#"
   let crimeType
 
   // variable for user selection for Crime category = selectedCategory
   // variable for user selection for Year - selectedYear
 
-
-  // let category = document.getElementById('catagoryInput');
-  // let year = document.getElementById('yearInput');
-
-  // let selectedCategory = category.options[category.selectedIndex].value;
-  // let selectedYear = year.options[year.selectedIndex].value;
-
   //if statements for crime/band selection
 
-  // selectedCategory = 'Murder'
+  selectedCategory = 'Murder'
 
   if (selectedCategory === 'Murder') {
     crimeType = 'homicide'
@@ -84,7 +77,6 @@ function getUserSelections() {
     }
 
   }
-
   selectedYear = year.options[year.selectedIndex].value;
   selectedCategory = 'Robbery'
 
@@ -313,6 +305,11 @@ function getUserSelections() {
 
     }
   }
+
+
+
+
+
 
   // code for fetch 1
 

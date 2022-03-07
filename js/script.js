@@ -1,10 +1,14 @@
 // Onload year and data
 
-let savedYear = localStorage.getItem("year")
+
 
 // add for all saved data for that seleted year
 
 function loadPreviousData() {
+
+  // post saved year
+
+  let savedYear = localStorage.getItem("year")
   document.getElementById('headingYear').innerHTML = savedYear
 
   //data chart local save
@@ -101,12 +105,15 @@ function loadPreviousData() {
 
 }
 
+loadPreviousData()
+
 //crime data table production
 
 
 // Category and Year Select
 
 function getUserSelections() {
+
   let category = document.getElementById('catagoryInput');
   let year = document.getElementById('yearInput');
 
@@ -114,6 +121,12 @@ function getUserSelections() {
   let selectedYear = year.options[year.selectedIndex].value;
 
   console.log(selectedCategory, selectedYear);
+
+  let headingYear = localStorage.setItem("year", selectedYear)
+  let headingCategory = localStorage.setItem("category", selectedCategory)
+
+  document.getElementById('headingYear').innerHTML = selectedYear
+  document.getElementById('headingCategory').innerHTML = selectedCategory
 
   //if statement for selecting the category and retrieving the data from the table
 
@@ -145,6 +158,8 @@ function getUserSelections() {
     crimeType = 'homicide'
     let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
 
+    console.log(crimeApi)
+
     let totalCleared = 0
 
     fetch(crimeApi)
@@ -159,6 +174,8 @@ function getUserSelections() {
         document.getElementById('murderNumber').innerHTML = totalCleared
         localStorage.setItem('murderNumber', totalCleared)
       })
+
+    console.log(totalCleared)
 
     selectedYear++
     totalCleared = 0
@@ -448,11 +465,29 @@ function getUserSelections() {
   // variable for crime data for prior year = crimeNumberPrior
   // variable for crime data for following year = crimeNumberFollowing
 
-
   //// fetch 2 - Spotify
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
-  //// use selectedCategory to establish band name ------------------------
+  //// use selectedCategory and totalCleared to establish band name and song number ------------------------
+  let crimeValue
+
+  if (selectedCategory === 'Murder') {
+    crimeValue = document.getElementById('murderNumber').value
+  }
+  if (selectedCategory === 'Robbery') {
+    crimeValue = document.getElementById('robberyNumber').value
+  }
+  if (selectedCategory === 'Grand Theft Auto') {
+    crimeValue - document.getElementById('gtaNumber').value
+  }
+  if (selectedCategory === 'Arson') {
+    crimeValue = document.getElementById('arsonNumber').value
+  }
+  if (selectedCategory === 'Assault') {
+    crimeValue = document.getElementById('assaultNumber').value
+  }
+  console.log(crimeValue)
+
   let keyword = selectedCategory
   console.log(keyword)
   //// use selectedCategory to establish band name ------------------------
@@ -472,35 +507,10 @@ function getUserSelections() {
     .then(function (data) {
       console.log(data);
 
-      //if statement
-
-      let crimeValue
-
-      if (selectedCategory === 'Murder') {
-        crimeValue = document.getElementById('murderNumber').value
-        return crimeValue
-      }
-      if (selectedCategory === 'Robbery') {
-        crimeValue = document.getElementById('robberyNumber').value
-        return crimeValue
-      }
-      if (selectedCategory === 'Grand Theft Auto') {
-        crimeValue - document.getElementById('gtaNumber').value
-        return crimeValue
-      }
-      if (selectedCategory === 'Arson') {
-        crimeValue = document.getElementById('arsonNumber').value
-        return crimeValue
-      }
-      if (selectedCategory === 'Assault') {
-        crimeValue = document.getElementById('assaultNumber').value
-        return crimeValue
-      }
-      console.log(crimevalue)
       //random method trigger after seach function ------------------------
 
       // does x = crimeNumber? ------------------------
-
+      // let x = crimeValue
       let x = Math.floor(Math.random() * 10);
       console.log(x);
 
@@ -546,17 +556,3 @@ function getUserSelections() {
 
     })
 }
-
-
-////// fetch 3 - MediaWiki - search WikiPedia
-////// follows fetch 2 setting variable songName
-////// https://www.mediawiki.org/wiki/API:Main_page
-
-let endPointWiki = "https://www.mediawiki.org/w/api.php"
-
-////// code for fetch 3
-
-////// use songName to do a search on Wikipedia
-
-let set = "set" // establish variables - types of info we can get
-

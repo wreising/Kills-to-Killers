@@ -492,6 +492,7 @@ function getUserSelections() {
 
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
   let keyword = selectedCategory;
+  console.log(keyword);
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" +

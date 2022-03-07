@@ -1,132 +1,126 @@
 // Onload year and data
 
-
-
 // add for all saved data for that seleted year
 
 function loadPreviousData() {
-
   // post saved year
 
-  let savedYear = localStorage.getItem("year")
-  document.getElementById('headingYear').innerHTML = savedYear
+  let savedYear = localStorage.getItem("year");
+  document.getElementById("headingYear").innerHTML = savedYear;
 
   //data chart local save
 
-  let murderNumber = localStorage.getItem('murderNumber')
-  let murderNumberPlus = localStorage.getItem('murderNumber+1')
-  let murderNumberMinus = localStorage.getItem('murderNumber-1')
+  let murderNumber = localStorage.getItem("murderNumber");
+  let murderNumberPlus = localStorage.getItem("murderNumber+1");
+  let murderNumberMinus = localStorage.getItem("murderNumber-1");
 
   if (murderNumber === null) {
-    murderNumber = 'N/A'
+    murderNumber = "N/A";
   }
   if (murderNumberPlus === null) {
-    murderNumberPlus = 'N/A'
+    murderNumberPlus = "N/A";
   }
   if (murderNumberMinus === null) {
-    murderNumberMinus = 'N/A'
+    murderNumberMinus = "N/A";
   }
 
-  document.getElementById('murderNumber').innerHTML = murderNumber
-  document.getElementById('murderNumber+1').innerHTML = murderNumberPlus
-  document.getElementById('murderNumber-1').innerHTML = murderNumberMinus
+  document.getElementById("murderNumber").innerHTML = murderNumber;
+  document.getElementById("murderNumber+1").innerHTML = murderNumberPlus;
+  document.getElementById("murderNumber-1").innerHTML = murderNumberMinus;
 
-  let robberyNumber = localStorage.getItem('robberyNumber')
-  let robberyNumberPlus = localStorage.getItem('robberyNumber+1')
-  let robberyNumberMinus = localStorage.getItem('robberyNumber-1')
+  let robberyNumber = localStorage.getItem("robberyNumber");
+  let robberyNumberPlus = localStorage.getItem("robberyNumber+1");
+  let robberyNumberMinus = localStorage.getItem("robberyNumber-1");
 
   if (robberyNumber === null) {
-    robberyNumber = 'N/A'
+    robberyNumber = "N/A";
   }
   if (robberyNumberPlus === null) {
-    robberyNumberPlus = 'N/A'
+    robberyNumberPlus = "N/A";
   }
   if (robberyNumberMinus === null) {
-    robberyNumberMinus = 'N/A'
+    robberyNumberMinus = "N/A";
   }
 
-  document.getElementById('robberyNumber').innerHTML = robberyNumber
-  document.getElementById('robberyNumber+1').innerHTML = robberyNumberPlus
-  document.getElementById('robberyNumber-1').innerHTML = robberyNumberMinus
+  document.getElementById("robberyNumber").innerHTML = robberyNumber;
+  document.getElementById("robberyNumber+1").innerHTML = robberyNumberPlus;
+  document.getElementById("robberyNumber-1").innerHTML = robberyNumberMinus;
 
-  let gtaNumber = localStorage.getItem('gtaNumber')
-  let gtaNumberPlus = localStorage.getItem('gtaNumber+1')
-  let gtaNumberMinus = localStorage.getItem('gtaNumber-1')
+  let gtaNumber = localStorage.getItem("gtaNumber");
+  let gtaNumberPlus = localStorage.getItem("gtaNumber+1");
+  let gtaNumberMinus = localStorage.getItem("gtaNumber-1");
 
   if (gtaNumber === null) {
-    gtaNumber = 'N/A'
+    gtaNumber = "N/A";
   }
   if (gtaNumberPlus === null) {
-    gtaNumberPlus = 'N/A'
+    gtaNumberPlus = "N/A";
   }
   if (gtaNumberMinus === null) {
-    gtaNumberMinus = 'N/A'
+    gtaNumberMinus = "N/A";
   }
 
-  document.getElementById('gtaNumber').innerHTML = gtaNumber
-  document.getElementById('gtaNumber+1').innerHTML = gtaNumberPlus
-  document.getElementById('gtaNumber-1').innerHTML = gtaNumberMinus
+  document.getElementById("gtaNumber").innerHTML = gtaNumber;
+  document.getElementById("gtaNumber+1").innerHTML = gtaNumberPlus;
+  document.getElementById("gtaNumber-1").innerHTML = gtaNumberMinus;
 
-  let arsonNumber = localStorage.getItem('arsonNumber')
-  let arsonNumberPlus = localStorage.getItem('arsonNumber+1')
-  let arsonNumberMinus = localStorage.getItem('arsonNumber-1')
+  let arsonNumber = localStorage.getItem("arsonNumber");
+  let arsonNumberPlus = localStorage.getItem("arsonNumber+1");
+  let arsonNumberMinus = localStorage.getItem("arsonNumber-1");
 
   if (arsonNumber === null) {
-    arsonNumber = 'N/A'
+    arsonNumber = "N/A";
   }
   if (arsonNumberPlus === null) {
-    arsonNumberPlus = 'N/A'
+    arsonNumberPlus = "N/A";
   }
   if (arsonNumberMinus === null) {
-    arsonNumberMinus = 'N/A'
+    arsonNumberMinus = "N/A";
   }
 
-  document.getElementById('arsonNumber').innerHTML = arsonNumber
-  document.getElementById('arsonNumber+1').innerHTML = arsonNumberPlus
-  document.getElementById('arsonNumber-1').innerHTML = arsonNumberMinus
+  document.getElementById("arsonNumber").innerHTML = arsonNumber;
+  document.getElementById("arsonNumber+1").innerHTML = arsonNumberPlus;
+  document.getElementById("arsonNumber-1").innerHTML = arsonNumberMinus;
 
-  let assaultNumber = localStorage.getItem('assaultNumber')
-  let assaultNumberPlus = localStorage.getItem('assaultNumber+1')
-  let assaultNumberMinus = localStorage.getItem('assaultNumber-1')
+  let assaultNumber = localStorage.getItem("assaultNumber");
+  let assaultNumberPlus = localStorage.getItem("assaultNumber+1");
+  let assaultNumberMinus = localStorage.getItem("assaultNumber-1");
 
   if (assaultNumber === null) {
-    assaultNumber = 'N/A'
+    assaultNumber = "N/A";
   }
   if (assaultNumberPlus === null) {
-    assaultNumberPlus = 'N/A'
+    assaultNumberPlus = "N/A";
   }
   if (assaultNumberMinus === null) {
-    assaultNumberMinus = 'N/A'
+    assaultNumberMinus = "N/A";
   }
 
-  document.getElementById('assaultNumber').innerHTML = assaultNumber
-  document.getElementById('assaultNumber+1').innerHTML = assaultNumberPlus
-  document.getElementById('assaultNumber-1').innerHTML = assaultNumberMinus
-
+  document.getElementById("assaultNumber").innerHTML = assaultNumber;
+  document.getElementById("assaultNumber+1").innerHTML = assaultNumberPlus;
+  document.getElementById("assaultNumber-1").innerHTML = assaultNumberMinus;
 }
 
-loadPreviousData()
+loadPreviousData();
 
 //crime data table production
-
 
 // Category and Year Select
 
 function getUserSelections() {
-
-  let category = document.getElementById('catagoryInput');
-  let year = document.getElementById('yearInput');
+  let category = document.getElementById("catagoryInput");
+  let year = document.getElementById("yearInput");
 
   let selectedCategory = category.options[category.selectedIndex].value;
   let selectedYear = year.options[year.selectedIndex].value;
 
   console.log(selectedCategory, selectedYear);
 
-  let headingYear = localStorage.setItem("year", selectedYear)
-  let headingCategory = localStorage.setItem("category", selectedCategory)
+  let headingYear = localStorage.setItem("year", selectedYear);
+  let headingCategory = localStorage.setItem("category", selectedCategory);
 
-  document.getElementById('headingYear').innerHTML = selectedYear
-  document.getElementById('headingCategory').innerHTML = selectedCategory
+  document.getElementById("headingYear").innerHTML = selectedYear;
+  document.getElementById("headingCategory").innerHTML = selectedCategory;
 
   //if statement for selecting the category and retrieving the data from the table
 
@@ -141,8 +135,7 @@ function getUserSelections() {
 
   // code for fetch 1
 
-
-  let crimeType
+  let crimeType;
 
   // let category = document.getElementById('catagoryInput');
   // let year = document.getElementById('yearInput');
@@ -154,311 +147,341 @@ function getUserSelections() {
 
   // selectedCategory = 'Murder'
 
-  if (selectedCategory === 'Murder') {
-    crimeType = 'homicide'
-    let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
+  if (selectedCategory === "Murder") {
+    crimeType = "homicide";
+    let crimeApi =
+      "https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/" +
+      crimeType +
+      "/" +
+      selectedYear +
+      "/" +
+      selectedYear +
+      "?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
 
-    console.log(crimeApi)
+    console.log(crimeApi);
 
-    let totalCleared = 0
+    let totalCleared = 0;
 
     fetch(crimeApi)
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (data) {
         //console.log(data)
         for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
+          totalCleared += data.results[i].cleared;
         }
-        document.getElementById('murderNumber').innerHTML = totalCleared
-        localStorage.setItem('murderNumber', totalCleared)
-      })
+        document.getElementById("murderNumber").innerHTML = totalCleared;
+        localStorage.setItem("murderNumber", totalCleared);
+      });
 
-    console.log(totalCleared)
+    console.log(totalCleared);
 
-    selectedYear++
-    totalCleared = 0
+    selectedYear++;
+    totalCleared = 0;
 
     fetch(crimeApi)
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (data) {
         //console.log(data)
         for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
+          totalCleared += data.results[i].cleared;
         }
-        document.getElementById('murderNumber+1').innerHTML = totalCleared
-        localStorage.setItem('murderNumber+1', totalCleared)
-      })
+        document.getElementById("murderNumber+1").innerHTML = totalCleared;
+        localStorage.setItem("murderNumber+1", totalCleared);
+      });
 
-    selectedYear--
-    selectedYear--
-    totalCleared = 0
+    selectedYear--;
+    selectedYear--;
+    totalCleared = 0;
     if (selectedYear === 1984) {
-      document.getElementById('murderNumber-1').innerHTML = 'N/A'
-      localStorage.setItem('murderNumber-1', totalCleared)
-    }
-    else {
+      document.getElementById("murderNumber-1").innerHTML = "N/A";
+      localStorage.setItem("murderNumber-1", totalCleared);
+    } else {
       fetch(crimeApi)
         .then(function (response) {
-          return response.json()
+          return response.json();
         })
         .then(function (data) {
           //console.log(data)
           for (let i = 0; i < data.results.length; i++) {
-            totalCleared += data.results[i].cleared
+            totalCleared += data.results[i].cleared;
           }
-          document.getElementById('murderNumber-1').innerHTML = totalCleared
-          localStorage.setItem('murderNumber-1', totalCleared)
-        })
+          document.getElementById("murderNumber-1").innerHTML = totalCleared;
+          localStorage.setItem("murderNumber-1", totalCleared);
+        });
     }
-
   }
   selectedYear = year.options[year.selectedIndex].value;
-  selectedCategory = 'Robbery'
+  selectedCategory = "Robbery";
 
-  if (selectedCategory === 'Robbery') {
-    crimeType = 'robbery'
-    let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
+  if (selectedCategory === "Robbery") {
+    crimeType = "robbery";
+    let crimeApi =
+      "https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/" +
+      crimeType +
+      "/" +
+      selectedYear +
+      "/" +
+      selectedYear +
+      "?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
 
-    totalCleared = 0
+    totalCleared = 0;
 
     fetch(crimeApi)
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (data) {
         //console.log(data)
         for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
+          totalCleared += data.results[i].cleared;
         }
-        document.getElementById('robberyNumber').innerHTML = totalCleared
-        localStorage.setItem('robberyNumber', totalCleared)
-      })
-    selectedYear++
-    totalCleared = 0
+        document.getElementById("robberyNumber").innerHTML = totalCleared;
+        localStorage.setItem("robberyNumber", totalCleared);
+      });
+    selectedYear++;
+    totalCleared = 0;
 
     fetch(crimeApi)
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (data) {
         //console.log(data)
         for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
+          totalCleared += data.results[i].cleared;
         }
-        document.getElementById('robberyNumber+1').innerHTML = totalCleared
-        localStorage.setItem('robberyNumber+1', totalCleared)
-      })
+        document.getElementById("robberyNumber+1").innerHTML = totalCleared;
+        localStorage.setItem("robberyNumber+1", totalCleared);
+      });
 
-    selectedYear--
-    selectedYear--
-    totalCleared = 0
+    selectedYear--;
+    selectedYear--;
+    totalCleared = 0;
 
     if (selectedYear === 1984) {
-      document.getElementById('robberyNumber-1').innerHTML = 'N/A'
-      localStorage.setItem('robberyNumber-1', totalCleared)
-    }
-    else {
+      document.getElementById("robberyNumber-1").innerHTML = "N/A";
+      localStorage.setItem("robberyNumber-1", totalCleared);
+    } else {
       fetch(crimeApi)
         .then(function (response) {
-          return response.json()
+          return response.json();
         })
         .then(function (data) {
           //console.log(data)
           for (let i = 0; i < data.results.length; i++) {
-            totalCleared += data.results[i].cleared
+            totalCleared += data.results[i].cleared;
           }
-          document.getElementById('robberyNumber-1').innerHTML = totalCleared
-          localStorage.setItem('robberyNumber-1', totalCleared)
-        })
-    }
-  }
-
-  selectedYear = year.options[year.selectedIndex].value;
-  selectedCategory = 'Grand Theft Auto'
-
-  if (selectedCategory === 'Grand Theft Auto') {
-    crimeType = 'motor-vehicle-theft'
-    let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
-
-    totalCleared = 0
-
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
-        }
-        document.getElementById('gtaNumber').innerHTML = totalCleared
-        localStorage.setItem('gtaNumber', totalCleared)
-      })
-    selectedYear++
-    totalCleared = 0
-
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
-        }
-        document.getElementById('gtaNumber+1').innerHTML = totalCleared
-        localStorage.setItem('gtaNumber+1', totalCleared)
-      })
-
-    selectedYear--
-    selectedYear--
-    totalCleared = 0
-
-    if (selectedYear === 1984) {
-      document.getElementById('gtaNumber-1').innerHTML = 'N/A'
-      localStorage.setItem('gtaNumber-1', totalCleared)
-    }
-    else {
-      fetch(crimeApi)
-        .then(function (response) {
-          return response.json()
-        })
-        .then(function (data) {
-          //console.log(data)
-          for (let i = 0; i < data.results.length; i++) {
-            totalCleared += data.results[i].cleared
-          }
-          document.getElementById('gtaNumber-1').innerHTML = totalCleared
-          localStorage.setItem('gtaNumber-1', totalCleared)
-        })
+          document.getElementById("robberyNumber-1").innerHTML = totalCleared;
+          localStorage.setItem("robberyNumber-1", totalCleared);
+        });
     }
   }
 
   selectedYear = year.options[year.selectedIndex].value;
-  selectedCategory = 'Arson'
+  selectedCategory = "Grand Theft Auto";
 
-  if (selectedCategory === 'Arson') {
-    crimeType = 'arson'
-    let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
+  if (selectedCategory === "Grand Theft Auto") {
+    crimeType = "motor-vehicle-theft";
+    let crimeApi =
+      "https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/" +
+      crimeType +
+      "/" +
+      selectedYear +
+      "/" +
+      selectedYear +
+      "?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
 
-    totalCleared = 0
+    totalCleared = 0;
 
     fetch(crimeApi)
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (data) {
         //console.log(data)
         for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
+          totalCleared += data.results[i].cleared;
         }
-        document.getElementById('arsonNumber').innerHTML = totalCleared
-        localStorage.setItem('arsonNumber', totalCleared)
-      })
-    selectedYear++
-    totalCleared = 0
+        document.getElementById("gtaNumber").innerHTML = totalCleared;
+        localStorage.setItem("gtaNumber", totalCleared);
+      });
+    selectedYear++;
+    totalCleared = 0;
 
     fetch(crimeApi)
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (data) {
         //console.log(data)
         for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
+          totalCleared += data.results[i].cleared;
         }
-        document.getElementById('arsonNumber+1').innerHTML = totalCleared
-        localStorage.setItem('arsonNumber+1', totalCleared)
-      })
+        document.getElementById("gtaNumber+1").innerHTML = totalCleared;
+        localStorage.setItem("gtaNumber+1", totalCleared);
+      });
 
-    selectedYear--
-    selectedYear--
-    totalCleared = 0
+    selectedYear--;
+    selectedYear--;
+    totalCleared = 0;
 
     if (selectedYear === 1984) {
-      document.getElementById('arsonNumber-1').innerHTML = 'N/A'
-      localStorage.setItem('arsonNumber-1', totalCleared)
-    }
-    else {
+      document.getElementById("gtaNumber-1").innerHTML = "N/A";
+      localStorage.setItem("gtaNumber-1", totalCleared);
+    } else {
       fetch(crimeApi)
         .then(function (response) {
-          return response.json()
+          return response.json();
         })
         .then(function (data) {
           //console.log(data)
           for (let i = 0; i < data.results.length; i++) {
-            totalCleared += data.results[i].cleared
+            totalCleared += data.results[i].cleared;
           }
-          document.getElementById('arsonNumber-1').innerHTML = totalCleared
-          localStorage.setItem('arsonNumber-1', totalCleared)
-        })
+          document.getElementById("gtaNumber-1").innerHTML = totalCleared;
+          localStorage.setItem("gtaNumber-1", totalCleared);
+        });
     }
   }
 
   selectedYear = year.options[year.selectedIndex].value;
-  selectedCategory = 'Assault'
+  selectedCategory = "Arson";
 
-  if (selectedCategory === 'Assault') {
-    crimeType = 'aggravated-assault'
-    let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
+  if (selectedCategory === "Arson") {
+    crimeType = "arson";
+    let crimeApi =
+      "https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/" +
+      crimeType +
+      "/" +
+      selectedYear +
+      "/" +
+      selectedYear +
+      "?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
 
-    totalCleared = 0
+    totalCleared = 0;
 
     fetch(crimeApi)
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (data) {
         //console.log(data)
         for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
+          totalCleared += data.results[i].cleared;
         }
-        document.getElementById('assaultNumber').innerHTML = totalCleared
-        localStorage.setItem('assaultNumber', totalCleared)
-      })
-    selectedYear++
-    totalCleared = 0
+        document.getElementById("arsonNumber").innerHTML = totalCleared;
+        localStorage.setItem("arsonNumber", totalCleared);
+      });
+    selectedYear++;
+    totalCleared = 0;
 
     fetch(crimeApi)
       .then(function (response) {
-        return response.json()
+        return response.json();
       })
       .then(function (data) {
         //console.log(data)
         for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared
+          totalCleared += data.results[i].cleared;
         }
-        document.getElementById('assaultNumber+1').innerHTML = totalCleared
-        localStorage.setItem('assaultNumber+1', totalCleared)
-      })
+        document.getElementById("arsonNumber+1").innerHTML = totalCleared;
+        localStorage.setItem("arsonNumber+1", totalCleared);
+      });
 
-    selectedYear--
-    selectedYear--
-    totalCleared = 0
+    selectedYear--;
+    selectedYear--;
+    totalCleared = 0;
 
     if (selectedYear === 1984) {
-      document.getElementById('assaultNumber-1').innerHTML = 'N/A'
-      localStorage.setItem('assaultNumber-1', totalCleared)
-    }
-    else {
+      document.getElementById("arsonNumber-1").innerHTML = "N/A";
+      localStorage.setItem("arsonNumber-1", totalCleared);
+    } else {
       fetch(crimeApi)
         .then(function (response) {
-          return response.json()
+          return response.json();
         })
         .then(function (data) {
           //console.log(data)
           for (let i = 0; i < data.results.length; i++) {
-            totalCleared += data.results[i].cleared
+            totalCleared += data.results[i].cleared;
           }
-          document.getElementById('assaultNumber-1').innerHTML = totalCleared
-          localStorage.setItem('assaultNumber-1', totalCleared)
-        })
+          document.getElementById("arsonNumber-1").innerHTML = totalCleared;
+          localStorage.setItem("arsonNumber-1", totalCleared);
+        });
     }
   }
+
+  selectedYear = year.options[year.selectedIndex].value;
+  selectedCategory = "Assault";
+
+  if (selectedCategory === "Assault") {
+    crimeType = "aggravated-assault";
+    let crimeApi =
+      "https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/" +
+      crimeType +
+      "/" +
+      selectedYear +
+      "/" +
+      selectedYear +
+      "?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
+
+    totalCleared = 0;
+
+    fetch(crimeApi)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        //console.log(data)
+        for (let i = 0; i < data.results.length; i++) {
+          totalCleared += data.results[i].cleared;
+        }
+        document.getElementById("assaultNumber").innerHTML = totalCleared;
+        localStorage.setItem("assaultNumber", totalCleared);
+      });
+    selectedYear++;
+    totalCleared = 0;
+
+    fetch(crimeApi)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        //console.log(data)
+        for (let i = 0; i < data.results.length; i++) {
+          totalCleared += data.results[i].cleared;
+        }
+        document.getElementById("assaultNumber+1").innerHTML = totalCleared;
+        localStorage.setItem("assaultNumber+1", totalCleared);
+      });
+
+    selectedYear--;
+    selectedYear--;
+    totalCleared = 0;
+
+    if (selectedYear === 1984) {
+      document.getElementById("assaultNumber-1").innerHTML = "N/A";
+      localStorage.setItem("assaultNumber-1", totalCleared);
+    } else {
+      fetch(crimeApi)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          //console.log(data)
+          for (let i = 0; i < data.results.length; i++) {
+            totalCleared += data.results[i].cleared;
+          }
+          document.getElementById("assaultNumber-1").innerHTML = totalCleared;
+          localStorage.setItem("assaultNumber-1", totalCleared);
+        });
+    }
+  }
+
 
   // variable for crime data for selected year = crimeNumber
 
@@ -469,44 +492,42 @@ function getUserSelections() {
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
-  let crimeValue
+  //if statement
 
-  if (selectedCategory === 'Murder') {
-    crimeValue = document.getElementById('murderNumber').value
-  }
-  if (selectedCategory === 'Robbery') {
-    crimeValue = document.getElementById('robberyNumber').value
-  }
-  if (selectedCategory === 'Grand Theft Auto') {
-    crimeValue - document.getElementById('gtaNumber').value
-  }
-  if (selectedCategory === 'Arson') {
-    crimeValue = document.getElementById('arsonNumber').value
-  }
-  if (selectedCategory === 'Assault') {
-    crimeValue = document.getElementById('assaultNumber').value
-  }
-  console.log(crimeValue)
+  let crimeValue;
 
-  let keyword = selectedCategory
-  console.log(keyword)
-  //// use selectedCategory to establish band name ------------------------
+  if (selectedCategory === "Murder") {
+    crimeValue = document.getElementById("murderNumber").value;
+  } else if (selectedCategory === "Robbery") {
+    crimeValue = document.getElementById("robberyNumber").value;
+  } else if (selectedCategory === "Grand Theft Auto") {
+    crimeValue - document.getElementById("gtaNumber").value;
+  } else if (selectedCategory === "Arson") {
+    crimeValue = document.getElementById("arsonNumber").value;
+  } else if (selectedCategory === "Assault") {
+    crimeValue = document.getElementById("assaultNumber").value;
+  }
+  console.log(crimeValue);
+
+  let keyword = localStorage.getItem("category");
 
   fetch(
-    "https://spotify23.p.rapidapi.com/search/?q=" + keyword + "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
+    "https://spotify23.p.rapidapi.com/search/?q=" +
+    keyword +
+    "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
     {
       method: "GET",
       headers: {
         "x-rapidapi-host": "spotify23.p.rapidapi.com",
         "x-rapidapi-key": "13afb176d0msh1bebd3b48309acfp18e1bbjsn28d023f0b592",
       },
-    })
+    }
+  )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-
       //random method trigger after seach function ------------------------
 
       // does x = crimeNumber? ------------------------
@@ -519,16 +540,18 @@ function getUserSelections() {
       //calling var for output of a song
       let songName = data.tracks.items[x].data.name;
       let artistName = data.tracks.items[x].data.artists.items[0].profile.name;
-      let albumImg = data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
+      let albumImg =
+        data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
       let albumName = data.tracks.items[x].data.albumOfTrack.name;
       let codeSong = data.tracks.items[x].data.albumOfTrack.id;
-      let songLink = data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl;
+      let songLink =
+        data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl;
 
       //song player on page
       const musicBox = `<iframe
               src="https://open.spotify.com/embed/album/${codeSong}?utm_source=generator"
               width="100%"
-              height="200"
+              height="80"
               frameborder="0"
               allowfullscreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -545,14 +568,12 @@ function getUserSelections() {
       //Album link
       console.log("link: " + songLink);
 
-
       // render to page
-      document.getElementById('songTitle').innerHTML = songName
-      document.getElementById('bandName').innerHTML = artistName
-      document.getElementById('art').setAttribute('src', albumImg)
-      document.getElementById('albumTitle').innerHTML = albumName
+      document.getElementById("songTitle").innerHTML = songName;
+      document.getElementById("bandName").innerHTML = artistName;
+      document.getElementById("art").setAttribute("src", albumImg);
+      document.getElementById("albumTitle").innerHTML = albumName;
       document.getElementById("frame").innerHTML = musicBox;
       // document.getElementById('spotifyLink').setAttribute('href', songLink)
-
-    })
+    });
 }

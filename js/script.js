@@ -507,10 +507,41 @@ function getUserSelections() {
 
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
 
+  let keyword = selectedCategory;
+  console.log(keyword);
+
+  //if statement
+
+
   let keyword = localStorage.getItem("category");
   // let crimeValue = ""
 
   // console.log(crimeValue);
+
+  let keyword;
+  let crimeValue;
+
+  if (selectedCategory === "Murder") {
+    crimeValue = document.getElementById("murderNumber").value;
+    keyword = 'The Killers'
+  } else if (selectedCategory === "Robbery") {
+    crimeValue = document.getElementById("robberyNumber").value;
+    keyword = 'The Police'
+  } else if (selectedCategory === "Grand Theft Auto") {
+    crimeValue - document.getElementById("gtaNumber").value;
+    keyword = 'Motorhead'
+  } else if (selectedCategory === "Arson") {
+    crimeValue = document.getElementById("arsonNumber").value;
+    keyword = 'FireHouse'
+  } else if (selectedCategory === "Assault") {
+    crimeValue = document.getElementById("assaultNumber").value;
+    keyword = 'Knife Party'
+  }
+  console.log(crimeValue);
+  console.log(keyword)
+
+
+
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" +
@@ -530,27 +561,33 @@ function getUserSelections() {
     .then(function (data) {
       console.log(data);
 
+
       //if statement
 
-      let crimeValue;
+      let crimeValue = totalCleared;
 
       if (selectedCategory === "Murder") {
         crimeValue = document.getElementById("murderNumber").value;
-      } else if (selectedCategory === "Robbery") {
+      }
+      if (selectedCategory === "Robbery") {
         crimeValue = document.getElementById("robberyNumber").value;
-      } else if (selectedCategory === "Grand Theft Auto") {
+      }
+      if (selectedCategory === "Grand Theft Auto") {
         crimeValue - document.getElementById("gtaNumber").value;
-      } else if (selectedCategory === "Arson") {
+      }
+      if (selectedCategory === "Arson") {
         crimeValue = document.getElementById("arsonNumber").value;
-      } else if (selectedCategory === "Assault") {
+      }
+      if (selectedCategory === "Assault") {
         crimeValue = document.getElementById("assaultNumber").value;
       }
-      console.log(crimeValue);
+
+
       //random method trigger after seach function ------------------------
 
       // does x = crimeNumber? ------------------------
-
-      let x = Math.floor(Math.random() * 100);
+      // let x = crimeValue
+      let x = Math.floor(Math.random() * 10);
       console.log(x);
 
       //or use x = # of incident ------------------------
@@ -572,7 +609,7 @@ function getUserSelections() {
               height="80"
               frameborder="0"
               allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
             ></iframe>`;
 
       //title of the song

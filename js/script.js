@@ -1,100 +1,116 @@
-//data chart local save
+// Onload year and data
 
-let murderNumber = localStorage.getItem('murderNumber')
-let murderNumberPlus = localStorage.getItem('murderNumber+1')
-let murderNumberMinus = localStorage.getItem('murderNumber-1')
 
-if (murderNumber === null) {
-  murderNumber = 'N/A'
-}
-if (murderNumberPlus === null) {
-  murderNumberPlus = 'N/A'
-}
-if (murderNumberMinus === null) {
-  murderNumberMinus = 'N/A'
-}
 
-document.getElementById('murderNumber').innerHTML = murderNumber
-document.getElementById('murderNumber+1').innerHTML = murderNumberPlus
-document.getElementById('murderNumber-1').innerHTML = murderNumberMinus
+// add for all saved data for that seleted year
 
-let robberyNumber = localStorage.getItem('robberyNumber')
-let robberyNumberPlus = localStorage.getItem('robberyNumber+1')
-let robberyNumberMinus = localStorage.getItem('robberyNumber-1')
+function loadPreviousData() {
 
-if (robberyNumber === null) {
-  robberyNumber = 'N/A'
-}
-if (robberyNumberPlus === null) {
-  robberyNumberPlus = 'N/A'
-}
-if (robberyNumberMinus === null) {
-  robberyNumberMinus = 'N/A'
-}
+  // post saved year
 
-document.getElementById('robberyNumber').innerHTML = robberyNumber
-document.getElementById('robberyNumber+1').innerHTML = robberyNumberPlus
-document.getElementById('robberyNumber-1').innerHTML = robberyNumberMinus
+  let savedYear = localStorage.getItem("year")
+  document.getElementById('headingYear').innerHTML = savedYear
 
-let gtaNumber = localStorage.getItem('gtaNumber')
-let gtaNumberPlus = localStorage.getItem('gtaNumber+1')
-let gtaNumberMinus = localStorage.getItem('gtaNumber-1')
+  //data chart local save
 
-if (gtaNumber === null) {
-  gtaNumber = 'N/A'
-}
-if (gtaNumberPlus === null) {
-  gtaNumberPlus = 'N/A'
-}
-if (gtaNumberMinus === null) {
-  gtaNumberMinus = 'N/A'
-}
+  let murderNumber = localStorage.getItem('murderNumber')
+  let murderNumberPlus = localStorage.getItem('murderNumber+1')
+  let murderNumberMinus = localStorage.getItem('murderNumber-1')
 
-document.getElementById('gtaNumber').innerHTML = gtaNumber
-document.getElementById('gtaNumber+1').innerHTML = gtaNumberPlus
-document.getElementById('gtaNumber-1').innerHTML = gtaNumberMinus
+  if (murderNumber === null) {
+    murderNumber = 'N/A'
+  }
+  if (murderNumberPlus === null) {
+    murderNumberPlus = 'N/A'
+  }
+  if (murderNumberMinus === null) {
+    murderNumberMinus = 'N/A'
+  }
 
-let arsonNumber = localStorage.getItem('arsonNumber')
-let arsonNumberPlus = localStorage.getItem('arsonNumber+1')
-let arsonNumberMinus = localStorage.getItem('arsonNumber-1')
+  document.getElementById('murderNumber').innerHTML = murderNumber
+  document.getElementById('murderNumber+1').innerHTML = murderNumberPlus
+  document.getElementById('murderNumber-1').innerHTML = murderNumberMinus
 
-if (arsonNumber === null) {
-  arsonNumber = 'N/A'
-}
-if (arsonNumberPlus === null) {
-  arsonNumberPlus = 'N/A'
-}
-if (arsonNumberMinus === null) {
-  arsonNumberMinus = 'N/A'
-}
+  let robberyNumber = localStorage.getItem('robberyNumber')
+  let robberyNumberPlus = localStorage.getItem('robberyNumber+1')
+  let robberyNumberMinus = localStorage.getItem('robberyNumber-1')
 
-document.getElementById('arsonNumber').innerHTML = arsonNumber
-document.getElementById('arsonNumber+1').innerHTML = arsonNumberPlus
-document.getElementById('arsonNumber-1').innerHTML = arsonNumberMinus
+  if (robberyNumber === null) {
+    robberyNumber = 'N/A'
+  }
+  if (robberyNumberPlus === null) {
+    robberyNumberPlus = 'N/A'
+  }
+  if (robberyNumberMinus === null) {
+    robberyNumberMinus = 'N/A'
+  }
 
-let assaultNumber = localStorage.getItem('assaultNumber')
-let assaultNumberPlus = localStorage.getItem('assaultNumber+1')
-let assaultNumberMinus = localStorage.getItem('assaultNumber-1')
+  document.getElementById('robberyNumber').innerHTML = robberyNumber
+  document.getElementById('robberyNumber+1').innerHTML = robberyNumberPlus
+  document.getElementById('robberyNumber-1').innerHTML = robberyNumberMinus
 
-if (assaultNumber === null) {
-  assaultNumber = 'N/A'
-}
-if (assaultNumberPlus === null) {
-  assaultNumberPlus = 'N/A'
-}
-if (assaultNumberMinus === null) {
-  assaultNumberMinus = 'N/A'
-}
+  let gtaNumber = localStorage.getItem('gtaNumber')
+  let gtaNumberPlus = localStorage.getItem('gtaNumber+1')
+  let gtaNumberMinus = localStorage.getItem('gtaNumber-1')
 
-document.getElementById('assaultNumber').innerHTML = assaultNumber
-document.getElementById('assaultNumber+1').innerHTML = assaultNumberPlus
-document.getElementById('assaultNumber-1').innerHTML = assaultNumberMinus
+  if (gtaNumber === null) {
+    gtaNumber = 'N/A'
+  }
+  if (gtaNumberPlus === null) {
+    gtaNumberPlus = 'N/A'
+  }
+  if (gtaNumberMinus === null) {
+    gtaNumberMinus = 'N/A'
+  }
+
+  document.getElementById('gtaNumber').innerHTML = gtaNumber
+  document.getElementById('gtaNumber+1').innerHTML = gtaNumberPlus
+  document.getElementById('gtaNumber-1').innerHTML = gtaNumberMinus
+
+  let arsonNumber = localStorage.getItem('arsonNumber')
+  let arsonNumberPlus = localStorage.getItem('arsonNumber+1')
+  let arsonNumberMinus = localStorage.getItem('arsonNumber-1')
+
+  if (arsonNumber === null) {
+    arsonNumber = 'N/A'
+  }
+  if (arsonNumberPlus === null) {
+    arsonNumberPlus = 'N/A'
+  }
+  if (arsonNumberMinus === null) {
+    arsonNumberMinus = 'N/A'
+  }
+
+  document.getElementById('arsonNumber').innerHTML = arsonNumber
+  document.getElementById('arsonNumber+1').innerHTML = arsonNumberPlus
+  document.getElementById('arsonNumber-1').innerHTML = arsonNumberMinus
+
+  let assaultNumber = localStorage.getItem('assaultNumber')
+  let assaultNumberPlus = localStorage.getItem('assaultNumber+1')
+  let assaultNumberMinus = localStorage.getItem('assaultNumber-1')
+
+  if (assaultNumber === null) {
+    assaultNumber = 'N/A'
+  }
+  if (assaultNumberPlus === null) {
+    assaultNumberPlus = 'N/A'
+  }
+  if (assaultNumberMinus === null) {
+    assaultNumberMinus = 'N/A'
+  }
+
+  document.getElementById('assaultNumber').innerHTML = assaultNumber
+  document.getElementById('assaultNumber+1').innerHTML = assaultNumberPlus
+  document.getElementById('assaultNumber-1').innerHTML = assaultNumberMinus
+
+}
 
 //crime data table production
 
-let crimeType
 
-let crimeNumberSingle = () => {
+// Category and Year Select
+
+function getUserSelections() {
 
   let category = document.getElementById('catagoryInput');
   let year = document.getElementById('yearInput');
@@ -102,13 +118,39 @@ let crimeNumberSingle = () => {
   let selectedCategory = category.options[category.selectedIndex].value;
   let selectedYear = year.options[year.selectedIndex].value;
 
+  console.log(selectedCategory, selectedYear);
+
+  //if statement for selecting the category and retrieving the data from the table
+
+  // fetch 1
+  // Crime Data Explorer API
+
+  // let apiKeyCrime = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
+  // let endPointCrime = "https://crime-data-explorer.fr.cloud.gov/#"
+
+  // variable for user selection for Crime category = selectedCategory
+  // variable for user selection for Year - selectedYear
+
+  // code for fetch 1
+
+
+  let crimeType
+
+  // let category = document.getElementById('catagoryInput');
+  // let year = document.getElementById('yearInput');
+
+  // let selectedCategory = category.options[category.selectedIndex].value;
+  // let selectedYear = year.options[year.selectedIndex].value;
+
   //if statements for crime/band selection
 
-  selectedCategory = 'Murder'
+  // selectedCategory = 'Murder'
 
   if (selectedCategory === 'Murder') {
     crimeType = 'homicide'
     let crimeApi = 'https://api.usa.gov/crime/fbi/sapi/api/summarized/state/ca/' + crimeType + '/' + selectedYear + '/' + selectedYear + '?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv'
+
+    console.log(crimeApi)
 
     let totalCleared = 0
 
@@ -124,6 +166,8 @@ let crimeNumberSingle = () => {
         document.getElementById('murderNumber').innerHTML = totalCleared
         localStorage.setItem('murderNumber', totalCleared)
       })
+
+    console.log(totalCleared)
 
     selectedYear++
     totalCleared = 0
@@ -407,31 +451,6 @@ let crimeNumberSingle = () => {
         })
     }
   }
-}
-
-// Category and Year Select
-
-function getUserSelections() {
-  let category = document.getElementById('catagoryInput');
-  let year = document.getElementById('yearInput');
-
-  let selectedCategory = category.options[category.selectedIndex].value;
-  let selectedYear = year.options[year.selectedIndex].value;
-
-  console.log(selectedCategory, selectedYear);
-
-  //if statement for selecting the category and retrieving the data from the table
-
-  // fetch 1
-  // Crime Data Explorer API
-
-  // let apiKeyCrime = "psLU38DZVp60vWENcvahlA1IOKbuRCSgeL001v1g"
-  // let endPointCrime = "https://crime-data-explorer.fr.cloud.gov/#"
-
-  // variable for user selection for Crime category = selectedCategory
-  // variable for user selection for Year - selectedYear
-
-  // code for fetch 1
 
   // variable for crime data for selected year = crimeNumber
 
@@ -442,9 +461,8 @@ function getUserSelections() {
   //// fetch 2 - Spotify
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
-  //// use selectedCategory to establish band name ------------------------
-  const keyword = "The Killers"
-  //// use selectedCategory to establish band name ------------------------
+  //// use selectedCategory and totalCleared to establish band name and song number ------------------------
+  let keyword = selectedCategory
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" + keyword + "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
@@ -466,26 +484,25 @@ function getUserSelections() {
       let crimeValue
 
       if (selectedCategory === 'Murder') {
-        crimeValue = document.getElementById('murderNumber').value
+        crimeValue = document.getElementById('murderNumber').innerHTML
         return crimeValue
       }
       if (selectedCategory === 'Robbery') {
-        crimeValue = document.getElementById('robberyNumber').value
+        crimeValue = document.getElementById('robberyNumber').innerHTML
         return crimeValue
       }
       if (selectedCategory === 'Grand Theft Auto') {
-        crimeValue - document.getElementById('gtaNumber').value
+        crimeValue - document.getElementById('gtaNumber').innerHTML
         return crimeValue
       }
       if (selectedCategory === 'Arson') {
-        crimeValue = document.getElementById('arsonNumber').value
-        return crimeValue
+        crimeValue = document.getElementById('arsonNumber').innerHTML
       }
       if (selectedCategory === 'Assault') {
-        crimeValue = document.getElementById('assaultNumber').value
+        crimeValue = document.getElementById('assaultNumber').innerHTML
         return crimeValue
       }
-
+      console.log(crimevalue)
       //random method trigger after seach function ------------------------
 
       // does x = crimeNumber? ------------------------

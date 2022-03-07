@@ -105,6 +105,8 @@ function loadPreviousData() {
 
 }
 
+loadPreviousData()
+
 //crime data table production
 
 
@@ -119,6 +121,12 @@ function getUserSelections() {
   let selectedYear = year.options[year.selectedIndex].value;
 
   console.log(selectedCategory, selectedYear);
+
+  let headingYear = localStorage.setItem("year", selectedYear)
+  let headingCategory = localStorage.setItem("category", selectedCategory)
+
+  document.getElementById('headingYear').innerHTML = selectedYear
+  document.getElementById('headingCategory').innerHTML = selectedCategory
 
   //if statement for selecting the category and retrieving the data from the table
 
@@ -457,12 +465,12 @@ function getUserSelections() {
   // variable for crime data for prior year = crimeNumberPrior
   // variable for crime data for following year = crimeNumberFollowing
 
-
   //// fetch 2 - Spotify
   //// immediately follows fetch 1 setting variable crimeNumber and also gets selectedCategory
 
   //// use selectedCategory and totalCleared to establish band name and song number ------------------------
   let keyword = selectedCategory
+  let crimeValue = totalCleared
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" + keyword + "&type=tracks&offset=0&limit=100&numberOfTopResults=5",
@@ -552,17 +560,3 @@ function getUserSelections() {
 
     })
 }
-
-
-////// fetch 3 - MediaWiki - search WikiPedia
-////// follows fetch 2 setting variable songName
-////// https://www.mediawiki.org/wiki/API:Main_page
-
-let endPointWiki = "https://www.mediawiki.org/w/api.php"
-
-////// code for fetch 3
-
-////// use songName to do a search on Wikipedia
-
-let set = "set" // establish variables - types of info we can get
-

@@ -454,6 +454,7 @@ function getUserSelections() {
 
   //// use selectedCategory to establish band name ------------------------
   let keyword = selectedCategory
+  console.log(keyword)
   //// use selectedCategory to establish band name ------------------------
 
   fetch(
@@ -500,7 +501,7 @@ function getUserSelections() {
 
       // does x = crimeNumber? ------------------------
 
-      let x = Math.floor(Math.random() * 100);
+      let x = Math.floor(Math.random() * 10);
       console.log(x);
 
       //or use x = # of incident ------------------------

@@ -8,7 +8,10 @@ function loadPreviousData() {
 
   // Previous saved year
   let savedYear = localStorage.getItem("year");
+  let savedCategory = localStorage.getItem("category");
   document.getElementById("headingYear").innerHTML = savedYear;
+  document.getElementById("headingCategory").innerHTML = savedCategory;
+
   // _________________________________________________________
 
   // Previous crime data table
@@ -662,22 +665,6 @@ function getUserSelections() {
       //if statement
 
       let crimeValue = totalCleared;
-
-      if (selectedCategory === "Murder") {
-        crimeValue = document.getElementById("murderNumber").value;
-      }
-      if (selectedCategory === "Robbery") {
-        crimeValue = document.getElementById("robberyNumber").value;
-      }
-      if (selectedCategory === "Grand Theft Auto") {
-        crimeValue - document.getElementById("gtaNumber").value;
-      }
-      if (selectedCategory === "Arson") {
-        crimeValue = document.getElementById("arsonNumber").value;
-      }
-      if (selectedCategory === "Assault") {
-        crimeValue = document.getElementById("assaultNumber").value;
-      }
 
       // let x = crimeValue
       let x = Math.floor(Math.random() * 10);

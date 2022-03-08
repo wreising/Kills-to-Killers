@@ -2,7 +2,7 @@
 
 #### User input is: 1 of 5 categories of crime, and a year between 1985 and 2010 with the suggestion that the year be the user's birth year. 
 
-######(although some of us were born before 1985, but 1985 is the first year the crime API gives results for)
+*(although some of us were born before 1985, but 1985 is the first year the crime API gives results for)*
 
 On page load, the user will see empty spaces or N/A for table values. After selection of a year and category, those spaces and fields will be populated. If the user reloads the page or comes back to it, their prior selection will be displayed.
 

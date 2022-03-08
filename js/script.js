@@ -619,28 +619,25 @@ function getUserSelections() {
   selectedCategory = category.options[category.selectedIndex].value;
 
   let keyword;
-  let crimeValue;
-  console.log(selectedCategory)
-  console.log(document.getElementById("murderNumber").value)
+  // let crimeValue;
   
   if (selectedCategory === "Murder") {
-    crimeValue = document.getElementById("murderNumber").value;
+    // crimeValue = document.getElementById("murderNumber").innerHTML;
     keyword = 'The Killers'
   } else if (selectedCategory === "Robbery") {
-    crimeValue = document.getElementById("robberyNumber").value;
+    // crimeValue = document.getElementById("robberyNumber").innerHTML;
     keyword = 'The Police'
   } else if (selectedCategory === "Grand Theft Auto") {
-    crimeValue - document.getElementById("gtaNumber").value;
+    // crimeValue - document.getElementById("gtaNumber").innerHTML;
     keyword = 'Motorhead'
   } else if (selectedCategory === "Arson") {
-    crimeValue = document.getElementById("arsonNumber").value;
+    // crimeValue = document.getElementById("arsonNumber").innerHTML;
     keyword = 'FireHouse'
   } else {
-    crimeValue = document.getElementById("assaultNumber").value;
+    // crimeValue = document.getElementById("assaultNumber").innerHTML;
     keyword = 'Knife Party'
   }
-  console.log(crimeValue);
-  console.log(keyword)
+
 
   fetch(
     "https://spotify23.p.rapidapi.com/search/?q=" +
@@ -658,11 +655,9 @@ function getUserSelections() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
 
       // let x = crimeValue
-      let x = Math.floor(Math.random() * 10);
-      console.log(x);
+      let x = Math.floor(Math.random() * 40);
 
       //calling var for output of a song
       let songName = data.tracks.items[x].data.name;
@@ -671,8 +666,6 @@ function getUserSelections() {
         data.tracks.items[x].data.albumOfTrack.coverArt.sources[0].url;
       let albumName = data.tracks.items[x].data.albumOfTrack.name;
       let codeSong = data.tracks.items[x].data.albumOfTrack.id;
-      let songLink =
-        data.tracks.items[x].data.albumOfTrack.sharingInfo.shareUrl;
 
       //song player on page
       const musicBox = `<iframe
@@ -684,16 +677,6 @@ function getUserSelections() {
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
             ></iframe>`;
 
-      //title of the song
-      console.log("song:" + songName);
-      //artist name
-      console.log("artist: " + artistName);
-      //album picture
-      console.log("img: " + albumImg);
-      // album name
-      console.log("album name: " + albumName);
-      //Album link
-      console.log("link: " + songLink);
 
       // save to local storage
       localStorage.setItem("songTitle", songName)

@@ -183,7 +183,7 @@ function getUserSelections() {
       return totalCleared
     }
     murder().then(
-      function(value) {
+      function (value) {
         fetch(crimeApi)
           .then(function (response) {
             return response.json();
@@ -321,8 +321,8 @@ function getUserSelections() {
     if (selectedYear === 1984) {
       document.getElementById("robberyNumber-1").innerHTML = "N/A";
       localStorage.setItem("robberyNumber-1", totalCleared);
-    } 
-    
+    }
+
     else {
       async function robberyMinus() {
         return totalCleared
@@ -334,7 +334,7 @@ function getUserSelections() {
               return response.json();
             })
             .then(function (data) {
-              //console.log(data)
+              console.log(data)
               for (let i = 0; i < data.results.length; i++) {
                 totalCleared += data.results[i].cleared;
               }
@@ -367,7 +367,7 @@ function getUserSelections() {
     async function gta() {
       return totalCleared
     }
-    
+
     gta().then(
       fetch(crimeApi)
         .then(function (response) {
@@ -411,8 +411,8 @@ function getUserSelections() {
     if (selectedYear === 1984) {
       document.getElementById("gtaNumber-1").innerHTML = "N/A";
       localStorage.setItem("gtaNumber-1", totalCleared);
-    } 
-    
+    }
+
     else {
       async function gtaMinus() {
         return totalCleared
@@ -500,8 +500,8 @@ function getUserSelections() {
     if (selectedYear === 1984) {
       document.getElementById("arsonNumber-1").innerHTML = "N/A";
       localStorage.setItem("arsonNumber-1", totalCleared);
-    } 
-    
+    }
+
     else {
       async function arsonMinus() {
         return totalCleared
@@ -589,8 +589,8 @@ function getUserSelections() {
     if (selectedYear === 1984) {
       document.getElementById("assaultNumber-1").innerHTML = "N/A";
       localStorage.setItem("assaultNumber-1", totalCleared);
-    } 
-    
+    }
+
     else {
       async function assaultMinus() {
         return totalCleared
@@ -609,7 +609,7 @@ function getUserSelections() {
             localStorage.setItem("assaultNumber-1", totalCleared);
             console.log(totalCleared)
           })
-      )    
+      )
     }
   }
 

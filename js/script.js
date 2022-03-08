@@ -178,56 +178,79 @@ function getUserSelections() {
 
     let totalCleared = 0;
 
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("murderNumber").innerHTML = totalCleared;
-        localStorage.setItem("murderNumber", totalCleared);
-      });
+    async function murder() {
+      return totalCleared
+    }
+    murder().then(
+      function(value) {
+        fetch(crimeApi)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            //console.log(data)
+            for (let i = 0; i < data.results.length; i++) {
+              totalCleared += data.results[i].cleared;
+            }
+            document.getElementById("murderNumber").innerHTML = totalCleared;
+            localStorage.setItem("murderNumber", totalCleared);
+          });
+      }
+    )
 
     console.log(totalCleared);
 
     selectedYear++;
     totalCleared = 0;
 
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("murderNumber+1").innerHTML = totalCleared;
-        localStorage.setItem("murderNumber+1", totalCleared);
-      });
+    async function murderPlus() {
+      return totalCleared
+    }
+    murderPlus().then(
+      function (value) {
+        fetch(crimeApi)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            //console.log(data)
+            for (let i = 0; i < data.results.length; i++) {
+              totalCleared += data.results[i].cleared;
+            }
+            document.getElementById("murderNumber+1").innerHTML = totalCleared;
+            localStorage.setItem("murderNumber+1", totalCleared);
+          });
+      }
+    )
 
     selectedYear--;
     selectedYear--;
     totalCleared = 0;
+
     if (selectedYear === 1984) {
       document.getElementById("murderNumber-1").innerHTML = "N/A";
       localStorage.setItem("murderNumber-1", totalCleared);
     } else {
-      fetch(crimeApi)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          //console.log(data)
-          for (let i = 0; i < data.results.length; i++) {
-            totalCleared += data.results[i].cleared;
-          }
-          document.getElementById("murderNumber-1").innerHTML = totalCleared;
-          localStorage.setItem("murderNumber-1", totalCleared);
-        });
+
+      async function murderMinus() {
+        return totalCleared
+      }
+      murderMinus().then(
+        function (value) {
+          fetch(crimeApi)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              //console.log(data)
+              for (let i = 0; i < data.results.length; i++) {
+                totalCleared += data.results[i].cleared;
+              }
+              document.getElementById("murderNumber-1").innerHTML = totalCleared;
+              localStorage.setItem("murderNumber-1", totalCleared);
+            });
+        }
+      )
     }
   }
 
@@ -247,33 +270,48 @@ function getUserSelections() {
 
     totalCleared = 0;
 
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("robberyNumber").innerHTML = totalCleared;
-        localStorage.setItem("robberyNumber", totalCleared);
-      });
+    async function robbery() {
+      return totalCleared
+    }
+    robbery().then(
+      function (value) {
+        fetch(crimeApi)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            //console.log(data)
+            for (let i = 0; i < data.results.length; i++) {
+              totalCleared += data.results[i].cleared;
+            }
+            document.getElementById("robberyNumber").innerHTML = totalCleared;
+            localStorage.setItem("robberyNumber", totalCleared);
+          })
+      }
+    )
+
     selectedYear++;
     totalCleared = 0;
 
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("robberyNumber+1").innerHTML = totalCleared;
-        localStorage.setItem("robberyNumber+1", totalCleared);
-      });
+    async function robberyPlus() {
+      return totalCleared
+    }
+    robberyPlus().then(
+      function (value) {
+        fetch(crimeApi)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            //console.log(data)
+            for (let i = 0; i < data.results.length; i++) {
+              totalCleared += data.results[i].cleared;
+            }
+            document.getElementById("robberyNumber+1").innerHTML = totalCleared;
+            localStorage.setItem("robberyNumber+1", totalCleared);
+          })
+      }
+    )
 
     selectedYear--;
     selectedYear--;
@@ -282,19 +320,28 @@ function getUserSelections() {
     if (selectedYear === 1984) {
       document.getElementById("robberyNumber-1").innerHTML = "N/A";
       localStorage.setItem("robberyNumber-1", totalCleared);
-    } else {
-      fetch(crimeApi)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          //console.log(data)
-          for (let i = 0; i < data.results.length; i++) {
-            totalCleared += data.results[i].cleared;
-          }
-          document.getElementById("robberyNumber-1").innerHTML = totalCleared;
-          localStorage.setItem("robberyNumber-1", totalCleared);
-        });
+    } 
+    
+    else {
+      async function robberyMinus() {
+        return totalCleared
+      }
+      robberyMinus().then(
+        function (value) {
+          fetch(crimeApi)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              //console.log(data)
+              for (let i = 0; i < data.results.length; i++) {
+                totalCleared += data.results[i].cleared;
+              }
+              document.getElementById("robberyNumber-1").innerHTML = totalCleared;
+              localStorage.setItem("robberyNumber-1", totalCleared);
+            })
+        }
+      )
     }
   }
   // _________________________________________________________
@@ -316,42 +363,11 @@ function getUserSelections() {
 
     totalCleared = 0;
 
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("gtaNumber").innerHTML = totalCleared;
-        localStorage.setItem("gtaNumber", totalCleared);
-      });
-    selectedYear++;
-    totalCleared = 0;
-
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("gtaNumber+1").innerHTML = totalCleared;
-        localStorage.setItem("gtaNumber+1", totalCleared);
-      });
-
-    selectedYear--;
-    selectedYear--;
-    totalCleared = 0;
-
-    if (selectedYear === 1984) {
-      document.getElementById("gtaNumber-1").innerHTML = "N/A";
-      localStorage.setItem("gtaNumber-1", totalCleared);
-    } else {
+    async function gta() {
+      return totalCleared
+    }
+    
+    gta().then(
       fetch(crimeApi)
         .then(function (response) {
           return response.json();
@@ -361,9 +377,59 @@ function getUserSelections() {
           for (let i = 0; i < data.results.length; i++) {
             totalCleared += data.results[i].cleared;
           }
-          document.getElementById("gtaNumber-1").innerHTML = totalCleared;
-          localStorage.setItem("gtaNumber-1", totalCleared);
-        });
+          document.getElementById("gtaNumber").innerHTML = totalCleared;
+          localStorage.setItem("gtaNumber", totalCleared);
+        })
+    )
+
+    selectedYear++;
+    totalCleared = 0;
+
+    async function gtaPlus() {
+      return totalCleared
+    }
+    gtaPlus().then(
+      fetch(crimeApi)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          //console.log(data)
+          for (let i = 0; i < data.results.length; i++) {
+            totalCleared += data.results[i].cleared;
+          }
+          document.getElementById("gtaNumber+1").innerHTML = totalCleared;
+          localStorage.setItem("gtaNumber+1", totalCleared);
+        })
+    )
+
+    selectedYear--;
+    selectedYear--;
+    totalCleared = 0;
+
+    if (selectedYear === 1984) {
+      document.getElementById("gtaNumber-1").innerHTML = "N/A";
+      localStorage.setItem("gtaNumber-1", totalCleared);
+    } 
+    
+    else {
+      async function gtaMinus() {
+        return totalCleared
+      }
+      gtaMinus().then(
+        fetch(crimeApi)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            //console.log(data)
+            for (let i = 0; i < data.results.length; i++) {
+              totalCleared += data.results[i].cleared;
+            }
+            document.getElementById("gtaNumber-1").innerHTML = totalCleared;
+            localStorage.setItem("gtaNumber-1", totalCleared);
+          })
+      )
     }
   }
 
@@ -386,42 +452,11 @@ function getUserSelections() {
 
     totalCleared = 0;
 
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("arsonNumber").innerHTML = totalCleared;
-        localStorage.setItem("arsonNumber", totalCleared);
-      });
-    selectedYear++;
-    totalCleared = 0;
+    async function arson() {
+      return totalCleared
+    }
+    arson().then(
 
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("arsonNumber+1").innerHTML = totalCleared;
-        localStorage.setItem("arsonNumber+1", totalCleared);
-      });
-
-    selectedYear--;
-    selectedYear--;
-    totalCleared = 0;
-
-    if (selectedYear === 1984) {
-      document.getElementById("arsonNumber-1").innerHTML = "N/A";
-      localStorage.setItem("arsonNumber-1", totalCleared);
-    } else {
       fetch(crimeApi)
         .then(function (response) {
           return response.json();
@@ -431,9 +466,59 @@ function getUserSelections() {
           for (let i = 0; i < data.results.length; i++) {
             totalCleared += data.results[i].cleared;
           }
-          document.getElementById("arsonNumber-1").innerHTML = totalCleared;
-          localStorage.setItem("arsonNumber-1", totalCleared);
-        });
+          document.getElementById("arsonNumber").innerHTML = totalCleared;
+          localStorage.setItem("arsonNumber", totalCleared);
+        })
+    )
+
+    selectedYear++;
+    totalCleared = 0;
+
+    async function arsonPlus() {
+      return totalCleared
+    }
+    arsonPlus().then(
+      fetch(crimeApi)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          //console.log(data)
+          for (let i = 0; i < data.results.length; i++) {
+            totalCleared += data.results[i].cleared;
+          }
+          document.getElementById("arsonNumber+1").innerHTML = totalCleared;
+          localStorage.setItem("arsonNumber+1", totalCleared);
+        })
+    )
+
+    selectedYear--;
+    selectedYear--;
+    totalCleared = 0;
+
+    if (selectedYear === 1984) {
+      document.getElementById("arsonNumber-1").innerHTML = "N/A";
+      localStorage.setItem("arsonNumber-1", totalCleared);
+    } 
+    
+    else {
+      async function arsonMinus() {
+        return totalCleared
+      }
+      arsonMinus().then(
+        fetch(crimeApi)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            //console.log(data)
+            for (let i = 0; i < data.results.length; i++) {
+              totalCleared += data.results[i].cleared;
+            }
+            document.getElementById("arsonNumber-1").innerHTML = totalCleared;
+            localStorage.setItem("arsonNumber-1", totalCleared);
+          })
+      )
     }
   }
 
@@ -456,33 +541,45 @@ function getUserSelections() {
 
     totalCleared = 0;
 
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("assaultNumber").innerHTML = totalCleared;
-        localStorage.setItem("assaultNumber", totalCleared);
-      });
+    async function assault() {
+      return totalCleared
+    }
+    assault().then(
+      fetch(crimeApi)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          //console.log(data)
+          for (let i = 0; i < data.results.length; i++) {
+            totalCleared += data.results[i].cleared;
+          }
+          document.getElementById("assaultNumber").innerHTML = totalCleared;
+          localStorage.setItem("assaultNumber", totalCleared);
+        })
+    )
+
     selectedYear++;
     totalCleared = 0;
 
-    fetch(crimeApi)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        //console.log(data)
-        for (let i = 0; i < data.results.length; i++) {
-          totalCleared += data.results[i].cleared;
-        }
-        document.getElementById("assaultNumber+1").innerHTML = totalCleared;
-        localStorage.setItem("assaultNumber+1", totalCleared);
-      });
+    async function assaultPlus() {
+      return totalCleared
+    }
+    assaultPlus().then(
+
+      fetch(crimeApi)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          //console.log(data)
+          for (let i = 0; i < data.results.length; i++) {
+            totalCleared += data.results[i].cleared;
+          }
+          document.getElementById("assaultNumber+1").innerHTML = totalCleared;
+          localStorage.setItem("assaultNumber+1", totalCleared);
+        })
+    )
 
     selectedYear--;
     selectedYear--;
@@ -491,20 +588,27 @@ function getUserSelections() {
     if (selectedYear === 1984) {
       document.getElementById("assaultNumber-1").innerHTML = "N/A";
       localStorage.setItem("assaultNumber-1", totalCleared);
-    } else {
-      fetch(crimeApi)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          // console.log(data)
-          for (let i = 0; i < data.results.length; i++) {
-            totalCleared += data.results[i].cleared;
-          }
-          document.getElementById("assaultNumber-1").innerHTML = totalCleared;
-          localStorage.setItem("assaultNumber-1", totalCleared);
-          console.log(totalCleared)
-        });
+    } 
+    
+    else {
+      async function assaultMinus() {
+        return totalCleared
+      }
+      assaultMinus().then(
+        fetch(crimeApi)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            // console.log(data)
+            for (let i = 0; i < data.results.length; i++) {
+              totalCleared += data.results[i].cleared;
+            }
+            document.getElementById("assaultNumber-1").innerHTML = totalCleared;
+            localStorage.setItem("assaultNumber-1", totalCleared);
+            console.log(totalCleared)
+          })
+      )    
     }
   }
 

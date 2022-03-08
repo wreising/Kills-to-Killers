@@ -468,7 +468,7 @@ function getUserSelections() {
         return response.json();
       })
       .then(function (data) {
-        //console.log(data)
+        console.log(data)
         for (let i = 0; i < data.results.length; i++) {
           totalCleared += data.results[i].cleared;
         }

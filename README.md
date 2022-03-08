@@ -49,4 +49,4 @@ That number of crimes and the selected category are used to search Spotify for a
 
 ### Screenshot of the APP
 
-![screenshot of Kills to Killers](misc/Screen%20Shot%202022-03-07.png)
+![screenshot of Kills to Killers](misc/Screen%20Shot%202022-03-08.png)
